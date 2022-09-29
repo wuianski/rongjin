@@ -1,0 +1,19 @@
+.section {
+  box-sizing: border-box;
+  /* width: 100vw;
+  height: 100vh; */
+  display: flex;
+  justify-content: flex-start;
+  /* overflow: hidden; */
+  /* background: #ff0055; */
+  z-index: 1;
+  /* position: relative; */
+  padding-bottom: 50vh;
+  /* margin-top: -8vh; */
+}
+.section .span  {
+  display: block;
+  transform: translateX(0px);
+  opacity: 1;
+  /* width: 100vw; */
+}
