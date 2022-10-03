@@ -13,10 +13,16 @@ import menu from "../public/imgs/menu.png";
 // import useMediaQuery from "@mui/material/useMediaQuery";
 import fetchData from "../lib/api";
 
-export default function Home({ data }) {
+import { useRouter } from "next/router";
+
+export default function Home({ about, menu }) {
   // console.log(data.about);
 
-  const [isOpen, setIsOpen] = useState(false);
+  /*** use router.query to get value from router.push in nav component ***/
+  const router = useRouter();
+  const query = router.query;
+  const aboutState = query.about;
+  //console.log(aboutState);
 
   return (
     <div className={styles.container}>
@@ -37,24 +43,26 @@ export default function Home({ data }) {
               backgroundColor: "#FFE8D8",
             }}
           >
-            <About about={data.about} />
+            <About about={about.about} aboutState={aboutState} />
           </Box>
           {/*** logo  ***/}
-          <Box
-            sx={{
-              position: "fixed",
-              zIndex: 9,
-              left: 30,
-              top: 30,
-              width: 147,
-              height: 121.63,
-            }}
-          >
-            <Image src={logo} placeholder="blur" alt="bg" />
-          </Box>
+          <Link href="/">
+            <Box
+              sx={{
+                position: "fixed",
+                zIndex: 9,
+                left: 30,
+                top: 30,
+                width: 147,
+                height: 121.63,
+              }}
+            >
+              <Image src={logo} placeholder="blur" alt="bg" />
+            </Box>
+          </Link>
           {/*** menu  ***/}
           <Box>
-            <Nav />
+            <Nav menu={menu.menu} />
           </Box>
         </div>
       </main>
@@ -64,7 +72,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [data] = await Promise.all([
+  const [about, menu] = await Promise.all([
     await fetchData(
       `
       query  {
@@ -82,11 +90,26 @@ export async function getServerSideProps() {
         variables: {},
       }
     ),
+    await fetchData(
+      `
+      query  {
+          menu{
+            id
+            business_hours
+            contact_us
+          }
+      }
+      `,
+      {
+        variables: {},
+      }
+    ),
   ]);
 
   return {
     props: {
-      data: data.data,
+      about: about.data,
+      menu: menu.data,
     },
     //revalidate: 1,
   };

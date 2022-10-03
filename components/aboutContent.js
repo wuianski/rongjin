@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  padding: theme.spacing(1),
+  padding: theme.spacing(2),
   textAlign: "left",
   color: theme.palette.text.secondary,
   background: "none",
@@ -13,10 +13,12 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ItemSub = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
+  padding: theme.spacing(3),
   textAlign: "left",
-  color: theme.palette.text.secondary,
+  // filter: "drop-shadow(20px 20px 40px rgba(0, 0, 0, 0.5))",
+  boxShadow:
+    "20px 20px 30px -1px rgba(0,0,0,0.2),10px 10px 40px 0px rgba(0,0,0,0.14),10px 10px 40px 0px rgba(0,0,0,0.12)",
+  borderRadius: 0,
 }));
 
 export default function AboutContent({ about }) {
@@ -25,20 +27,23 @@ export default function AboutContent({ about }) {
       {/*** about content which can scroll ***/}
       <Box
         sx={{
-          width: "50vw",
+          width: { xs: "93vw", md: "80vw" },
           height: "100vh",
           overflowY: "scroll",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
-          paddingLeft: "171px",
+          paddingLeft: { xs: "25px", md: "171px" },
           paddingTop: "315px",
           paddingBottom: "30px",
         }}
       >
-        <Stack direction="row" spacing={2}>
-          <Item sx={{ width: "65%" }}>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 0, md: 3 }}
+        >
+          <Item sx={{ width: { xs: "100%", md: "55%" } }}>
             <Box>
-              <Stack spacing={2}>
+              <Stack spacing={{ xs: 4, md: 8 }}>
                 {/*** 榕錦時光生活園區 ***/}
                 <ItemSub>
                   <Box
@@ -63,9 +68,9 @@ export default function AboutContent({ about }) {
               </Stack>
             </Box>
           </Item>
-          <Item sx={{ width: "35%" }}>
-            <Box>
-              <Stack spacing={2}>
+          <Item sx={{ width: { xs: "100%", md: "38%" } }}>
+            <Box pt={16}>
+              <Stack spacing={{ xs: 4, md: 8 }}>
                 {/*** 未來展望 ***/}
                 <ItemSub>
                   <Box

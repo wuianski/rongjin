@@ -43,16 +43,22 @@ export default function BrandKindB({ brand_kind2 }) {
   useEffect(() => {
     if (isInView1 == true) {
       console.log("isInView1 invew");
-      const element = document.getElementById("3-1");
-      element.scrollIntoView();
+      const element = document.getElementById("1-3");
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     } else if (isInView2 == true) {
       console.log("isInView2 invew");
       const element = document.getElementById("3-6");
-      element.scrollIntoView();
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     } else if (isInView3 == true) {
       console.log("isInView3 invew");
       const element = document.getElementById("2-8");
-      element.scrollIntoView();
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   }, [isInView1, isInView2, isInView3]);
 
@@ -61,8 +67,10 @@ export default function BrandKindB({ brand_kind2 }) {
       <Box
         p={3}
         sx={{
+          position: "absolute",
           width: "50vw",
-          height: "100vh",
+          height: "calc(100vh - 120px)",
+          bottom: 0,
           backgroundColor: "#fff",
           overflowY: "scroll",
           scrollbarWidth: "none",
@@ -79,7 +87,7 @@ export default function BrandKindB({ brand_kind2 }) {
           }}
           ml={1}
           mr={1}
-          pt={15}
+          pt={2}
           pb={10}
           ref={ref1}
           id="tab1_id1"

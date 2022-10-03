@@ -72,66 +72,6 @@ export default function AboutBG({ observer }) {
           />
         </Box>
       </div>
-
-      {/*** background svg  ***/}
-
-      {/* <Box
-        sx={{
-          position: "absolute",
-          zIndex: 1,
-          width: "100vw",
-          height: "100vh",
-          overflow: "hidden",
-        }}
-      >
-        <motion.svg
-          viewBox={`0 0 100 100`}
-          animate={controls_viewbox}
-          //   variants={bgVar}
-          //   initial={false}
-          //   animate={isOpen ? "open" : "closed"}
-        >
-          <motion.image
-            xlinkHref="/imgs/front_bg.jpg"
-            // animate={controls_pattern}
-            height={`78%`}
-          />
-        </motion.svg>
-      </Box> */}
-
-      {/*** about btn  ***/}
-      {/* <Box
-        sx={{
-          position: "absolute",
-          right: "18vw",
-          bottom: "30vh",
-          zIndex: 3,
-          color: "#0000ff",
-        }}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        about 關於榕錦
-      </Box> */}
-
-      {/*** about content  ***/}
-      {/* <Box
-        sx={{
-          position: "absolute",
-          zIndex: 2,
-          color: "#000",
-          width: "100vw",
-          height: "100vh",
-          overflow: "hidden",
-        }}
-      >
-        <motion.div
-          variants={itemVariants}
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-        >
-          <AboutContent />
-        </motion.div>
-      </Box> */}
     </>
   );
 }

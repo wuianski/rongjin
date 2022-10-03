@@ -26,6 +26,7 @@ export default function BrandKindA({ brand_kind1 }) {
       introduction: b.introduction,
       coverPhoto:
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
+      contactUs: b.contact_us,
     };
 
     return result;
@@ -43,16 +44,25 @@ export default function BrandKindA({ brand_kind1 }) {
   useEffect(() => {
     if (isInView1 == true) {
       console.log("isInView1 invew");
-      const element = document.getElementById("3-1");
-      element.scrollIntoView();
+      const element = document.getElementById("2-1");
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
     } else if (isInView2 == true) {
       console.log("isInView2 invew");
       const element = document.getElementById("3-6");
-      element.scrollIntoView();
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
     } else if (isInView3 == true) {
       console.log("isInView3 invew");
-      const element = document.getElementById("2-8");
-      element.scrollIntoView();
+      const element = document.getElementById("rightest");
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+      });
     }
   }, [isInView1, isInView2, isInView3]);
 
@@ -61,8 +71,10 @@ export default function BrandKindA({ brand_kind1 }) {
       <Box
         p={3}
         sx={{
-          width: "50vw",
-          height: "100vh",
+          position: "absolute",
+          width: { xs: "100vw", md: "50vw" },
+          height: "calc(100vh - 120px)",
+          bottom: 0,
           backgroundColor: "#fff",
           overflowY: "scroll",
           scrollbarWidth: "none",
@@ -79,7 +91,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={15}
+          pt={2} //15
           pb={10}
           ref={ref1}
           id="tab1_id1"
@@ -140,6 +152,19 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
                 dangerouslySetInnerHTML={{
                   __html: brand1[0].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[0].contactUs,
                 }}
               ></Box>
             </Item>
