@@ -49,7 +49,7 @@ export default function BrandKindC({ brand_kind3 }) {
       });
     } else if (isInView2 == true) {
       console.log("isInView2 invew");
-      const element = document.getElementById("3-6");
+      const element = document.getElementById("4-4-2");
       element.scrollIntoView({
         behavior: "smooth",
       });
@@ -90,7 +90,7 @@ export default function BrandKindC({ brand_kind3 }) {
           pt={2}
           pb={10}
           ref={ref1}
-          id="tab1_id1"
+          id="Kc_ID1"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -166,7 +166,7 @@ export default function BrandKindC({ brand_kind3 }) {
           pt={2}
           pb={10}
           ref={ref2}
-          id="tab1_id2"
+          id="Kc_ID2"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -242,7 +242,7 @@ export default function BrandKindC({ brand_kind3 }) {
           pt={2}
           pb={10}
           ref={ref3}
-          id="tab1_id3"
+          id="Kc_ID3"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}

@@ -10,6 +10,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   background: "none",
   boxShadow: "none",
+  [theme.breakpoints.down("md")]: {
+    //padding: theme.spacing(1),
+  },
 }));
 
 const ItemSub = styled(Paper)(({ theme }) => ({
@@ -19,6 +22,11 @@ const ItemSub = styled(Paper)(({ theme }) => ({
   boxShadow:
     "20px 20px 30px -1px rgba(0,0,0,0.2),10px 10px 40px 0px rgba(0,0,0,0.14),10px 10px 40px 0px rgba(0,0,0,0.12)",
   borderRadius: 0,
+  [theme.breakpoints.down("md")]: {
+    //padding: theme.spacing(2),
+    boxShadow:
+      "8px 8px 10px -1px rgba(0,0,0,0.2),8px 8px 10px 0px rgba(0,0,0,0.14),8px 8px 10px 0px rgba(0,0,0,0.12)",
+  },
 }));
 
 export default function AboutContent({ about }) {
@@ -27,14 +35,14 @@ export default function AboutContent({ about }) {
       {/*** about content which can scroll ***/}
       <Box
         sx={{
-          width: { xs: "93vw", md: "80vw" },
+          width: { xs: "95%", md: "80vw" },
           height: "100vh",
           overflowY: "scroll",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
-          paddingLeft: { xs: "25px", md: "171px" },
-          paddingTop: "315px",
-          paddingBottom: "30px",
+          paddingLeft: { xs: "20px", md: "171px" },
+          paddingTop: { xs: "215px", md: "300px" },
+          paddingBottom: "80px",
         }}
       >
         <Stack
@@ -60,7 +68,6 @@ export default function AboutContent({ about }) {
                   <Box
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
-                      height: "200vh",
                     }}
                     dangerouslySetInnerHTML={{ __html: about.history }}
                   />
@@ -69,7 +76,7 @@ export default function AboutContent({ about }) {
             </Box>
           </Item>
           <Item sx={{ width: { xs: "100%", md: "38%" } }}>
-            <Box pt={16}>
+            <Box pt={{ xs: 0, md: 16 }}>
               <Stack spacing={{ xs: 4, md: 8 }}>
                 {/*** 未來展望 ***/}
                 <ItemSub>

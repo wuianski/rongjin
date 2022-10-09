@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Link from "next/link";
 import About from "../components/about";
 import Nav from "../components/nav";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import logo from "../public/imgs/logo.png";
 import menu from "../public/imgs/menu.png";
 
@@ -33,38 +33,44 @@ export default function Home({ about, menu }) {
       </Head>
 
       <main className={styles.main}>
-        <div>
+        {/* <AnimatePresence exitBeforeEnter> */}
+        {/* <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+          exit={{ opacity: 1, y: "-100vh", transition: { duration: 0.3 } }}
+        > */}
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 1,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "#FFE8D8",
+          }}
+        >
+          <About about={about.about} aboutState={aboutState} />
+        </Box>
+        {/*** logo  ***/}
+        <Link href="/">
           <Box
             sx={{
-              position: "absolute",
-              zIndex: 1,
-              width: "100vw",
-              height: "100vh",
-              backgroundColor: "#FFE8D8",
+              position: "fixed",
+              zIndex: 9,
+              left: { xs: 30, md: 30 },
+              top: { xs: 15, md: 30 },
+              width: { xs: 147 * 0.7, md: 147 },
+              height: 121.63,
             }}
           >
-            <About about={about.about} aboutState={aboutState} />
+            <Image src={logo} placeholder="blur" alt="bg" />
           </Box>
-          {/*** logo  ***/}
-          <Link href="/">
-            <Box
-              sx={{
-                position: "fixed",
-                zIndex: 9,
-                left: 30,
-                top: 30,
-                width: 147,
-                height: 121.63,
-              }}
-            >
-              <Image src={logo} placeholder="blur" alt="bg" />
-            </Box>
-          </Link>
-          {/*** menu  ***/}
-          <Box>
-            <Nav menu={menu.menu} />
-          </Box>
-        </div>
+        </Link>
+        {/*** menu  ***/}
+        <Box>
+          <Nav menu={menu.menu} />
+        </Box>
+        {/* </motion.div> */}
+        {/* </AnimatePresence> */}
       </main>
     </div>
   );

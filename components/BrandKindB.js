@@ -43,13 +43,13 @@ export default function BrandKindB({ brand_kind2 }) {
   useEffect(() => {
     if (isInView1 == true) {
       console.log("isInView1 invew");
-      const element = document.getElementById("1-3");
+      const element = document.getElementById("2-1");
       element.scrollIntoView({
         behavior: "smooth",
       });
     } else if (isInView2 == true) {
       console.log("isInView2 invew");
-      const element = document.getElementById("3-6");
+      const element = document.getElementById("3-6-2");
       element.scrollIntoView({
         behavior: "smooth",
       });
@@ -90,7 +90,7 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={2}
           pb={10}
           ref={ref1}
-          id="tab1_id1"
+          id="Kb_ID1"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -166,7 +166,7 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={2}
           pb={10}
           ref={ref2}
-          id="tab1_id2"
+          id="Kb_ID2"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -242,7 +242,7 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={2}
           pb={10}
           ref={ref3}
-          id="tab1_id3"
+          id="Kb_ID3"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}

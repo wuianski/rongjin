@@ -172,7 +172,7 @@ export default function Nav({ menu }) {
         sx={{
           position: "fixed",
           zIndex: 9,
-          top: 30,
+          top: { xs: 15, md: 30 },
           right: 30,
           cursor: "pointer",
         }}
@@ -193,7 +193,7 @@ export default function Nav({ menu }) {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Fade in={open} mountOnEnter unmountOnExit timeout={500}>
+        <Fade in={open} mountOnEnter unmountOnExit timeout={300}>
           <Box
             sx={{
               backgroundColor: "#664612",
@@ -221,14 +221,15 @@ export default function Nav({ menu }) {
                 direction={{ xs: "row", md: "row" }}
                 spacing={{ xs: 6, md: 4 }}
                 mt={{ xs: 0, md: 0 }}
-                p={"30px"}
+                p={{ xs: "15px 30px", md: "30px 30px" }}
               >
                 {/*** logo inside nav ***/}
                 <Item sx={{ width: "50vw" }}>
                   <Box
                     sx={{
-                      width: 147,
+                      width: { xs: 147 * 0.7, md: 147 },
                       height: 121.63,
+                      cursor: "pointer",
                     }}
                     onClick={excuteHome}
                   >
@@ -563,7 +564,7 @@ export default function Nav({ menu }) {
                         <Box>
                           <Box
                             sx={{
-                              fontFamily: "GenYoGothic",
+                              fontFamily: "GenYoGothic TW",
                               color: "#FFE8D8",
                               fontSize: "16px",
                               lineHeight: "16px",

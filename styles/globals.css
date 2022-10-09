@@ -22,12 +22,12 @@
   font-weight: 400;
   font-style: normal;
 } */
-@font-face {
-  font-family: 'GenYoGothic';
+/* @font-face {
+  font-family: 'GenYoGothic TW';
   src: url('/assets/fonts/GenYoGothic/GenYoGothic-R.ttc');
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 html,
 body {
@@ -75,4 +75,14 @@ h3{
 p{
   line-height: 25px;
   letter-spacing: 0.025em;
+}
+/* react-player video player*/
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
