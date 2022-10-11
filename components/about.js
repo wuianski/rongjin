@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import AboutContent from "./aboutContent";
 import AboutBG from "./aboutBG";
 import Image from "next/image";
-import goToMap from "../public/imgs/goToMap.png";
+import gotomap from "../public/imgs/goto_map.png";
 import Return from "../public/imgs/return.png";
 import bg_text_tw from "../public/imgs/bg_text_tw.png";
 import bg_text_en from "../public/imgs/bg_text_en.png";
@@ -268,7 +268,7 @@ export default function About({ about, aboutState }) {
             onClick={executeGoMapA}
           >
             <Image
-              src={goToMap}
+              src={gotomap}
               alt="yt icon"
               layout="intrinsic"
               objectFit="cover"
