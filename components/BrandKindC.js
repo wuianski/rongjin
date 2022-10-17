@@ -26,6 +26,8 @@ export default function BrandKindC({ brand_kind3 }) {
       introduction: b.introduction,
       coverPhoto:
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
+      logoPhoto: !!b.logo && !!b.logo.filename_disk ? b.logo.filename_disk : "",
+      contactUs: b.contact_us,
     };
 
     return result;
@@ -37,40 +39,50 @@ export default function BrandKindC({ brand_kind3 }) {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
   const isInView1 = useInView(ref1);
   const isInView2 = useInView(ref2);
   const isInView3 = useInView(ref3);
+  const isInView4 = useInView(ref4);
   useEffect(() => {
     if (isInView1 == true) {
       console.log("isInView1 invew");
-      const element = document.getElementById("3-11");
+      const element = document.getElementById("2-1");
       element.scrollIntoView({
         behavior: "smooth",
       });
     } else if (isInView2 == true) {
       console.log("isInView2 invew");
-      const element = document.getElementById("4-4-2");
+      const element = document.getElementById("1-4");
       element.scrollIntoView({
         behavior: "smooth",
       });
     } else if (isInView3 == true) {
       console.log("isInView3 invew");
-      const element = document.getElementById("2-8");
+      const element = document.getElementById("3-6-1");
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else if (isInView4 == true) {
+      console.log("isInView4 invew");
+      const element = document.getElementById("3-16");
       element.scrollIntoView({
         behavior: "smooth",
       });
     }
-  }, [isInView1, isInView2, isInView3]);
+  }, [isInView1, isInView2, isInView3, isInView4]);
 
   return (
     <>
       <Box
         p={3}
+        mt={{ xs: "-80px", md: "-80px" }}
         sx={{
           position: "absolute",
-          width: "50vw",
-          height: "calc(100vh - 120px)",
-          bottom: 0,
+          width: { xs: "100vw", md: "50vw" },
+          height: "calc(100vh - 0px)",
+          top: { xs: 78, md: 78 },
+          //bottom: { xs: 78, md: "unset" },
           backgroundColor: "#fff",
           overflowY: "scroll",
           scrollbarWidth: "none",
@@ -78,24 +90,23 @@ export default function BrandKindC({ brand_kind3 }) {
         }}
       >
         {/*****************/}
-        {/*** 1st brand ***/}
+        {/*** 1st brand 吉品養生 ***/}
         <Box
           sx={{
             color: "#000",
             backgroundColor: "none",
-            borderBottom: "1px solid #000",
           }}
           ml={1}
           mr={1}
-          pt={2}
-          pb={10}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
           ref={ref1}
           id="Kc_ID1"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 6, md: 3 }}
-            mt={{ xs: 13, md: 0 }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
           >
@@ -107,6 +118,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   lineHeight: "43px",
                   fontFamily: "GenWanMin TW",
                   fontWeight: 600,
+                  //borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
                   __html: brand3[0].brandName,
@@ -119,19 +131,41 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
+                    height: { xs: "30vh", md: "50vh" },
                     borderRadius: "200px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
+                    //loader={myLoader}
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand3[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[0].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand3[0].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[0].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -151,27 +185,39 @@ export default function BrandKindC({ brand_kind3 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[0].contactUs,
+                }}
+              ></Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
-        {/*** 2nd brand ***/}
+        {/*** 2nd brand 花筏亭 ***/}
         <Box
           sx={{
             color: "#000",
             backgroundColor: "none",
-            borderBottom: "1px solid #000",
           }}
           ml={1}
           mr={1}
-          pt={2}
-          pb={10}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
           ref={ref2}
           id="Kc_ID2"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 6, md: 3 }}
-            mt={{ xs: 13, md: 0 }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
           >
@@ -183,6 +229,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   lineHeight: "43px",
                   fontFamily: "GenWanMin TW",
                   fontWeight: 600,
+                  borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
                   __html: brand3[1].brandName,
@@ -200,14 +247,35 @@ export default function BrandKindC({ brand_kind3 }) {
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand3[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[1].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand3[1].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[1].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -227,27 +295,39 @@ export default function BrandKindC({ brand_kind3 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[1].contactUs,
+                }}
+              ></Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
-        {/*** 3rd brand ***/}
+        {/*** 3rd brand 京町　山本屋 ***/}
         <Box
           sx={{
             color: "#000",
             backgroundColor: "none",
-            borderBottom: "1px solid #000",
           }}
           ml={1}
           mr={1}
-          pt={2}
-          pb={10}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
           ref={ref3}
           id="Kc_ID3"
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 6, md: 3 }}
-            mt={{ xs: 13, md: 0 }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
           >
@@ -259,14 +339,15 @@ export default function BrandKindC({ brand_kind3 }) {
                   lineHeight: "43px",
                   fontFamily: "GenWanMin TW",
                   fontWeight: 600,
+                  borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand3[0].brandName,
+                  __html: brand3[2].brandName,
                 }}
               ></Box>
             </Item>
             <Item>
-              {brand3[0].coverPhoto && (
+              {brand3[2].coverPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -276,14 +357,35 @@ export default function BrandKindC({ brand_kind3 }) {
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand3[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[2].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand3[2].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[2].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -299,7 +401,130 @@ export default function BrandKindC({ brand_kind3 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand3[0].introduction,
+                  __html: brand3[2].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[2].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 4th brand 好丘 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          ref={ref4}
+          id="Kc_ID4"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[3].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand3[3].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "50vh",
+                    borderRadius: "200px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[3].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand3[3].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[3].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[3].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand3[3].contactUs,
                 }}
               ></Box>
             </Item>

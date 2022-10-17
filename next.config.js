@@ -2,26 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ["localhost", `${process.env.DIRECTUS_URL}`],
+
+  env: {
+    DIRECTUS_URL_DEV: process.env.DIRECTUS_URL_DEV,
+    DIRECTUS_URL: process.env.DIRECTUS_URL,
+    NEXT_PUBLIC_GRAPHQL_DEV: process.env.NEXT_PUBLIC_GRAPHQL_DEV,
+    NEXT_PUBLIC_GRAPHQL: process.env.NEXT_PUBLIC_GRAPHQL,
   },
-  // async headers() {
-  //   return [
-  //     {
-  //       source: "/_next/:path*",
-  //       headers: [
-  //         {
-  //           key: "Access-Control-Allow-Origin",
-  //           value: "http://localhost:3000",
-  //         },
-  //       ],
-  //     },
-  //   ];
-  // },
-  // images: {
-  //   loader: "custom",
-  //   path: "http://localhost:8055/assets/",
-  // },
+
+  images: {
+    domains: ["data.rongjintimes.com"],
+  },
 };
 
 module.exports = nextConfig;

@@ -176,17 +176,8 @@ export default function Map({
 
   /*********************************************************/
   /*** click on map and switch tab and scroll to element ***/
-  const executeKcID1 = async (event) => {
-    //console.log("click executeTab");
-    setValue(2);
-    await delay(200);
-    //console.log("click");
-    /*** 寵物點子 BrandKindC id1 ***/
-    const element = document.getElementById("Kc_ID1");
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+
+  /*** 享時光 BrandKindA ***/
   const executeKaID1 = async (event) => {
     setValue(0);
     await delay(200);
@@ -201,6 +192,121 @@ export default function Map({
     await delay(200);
     /*** 金錦町 BrandKindA id2 ***/
     const element = document.getElementById("Ka_ID2");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKaID3 = async (event) => {
+    setValue(0);
+    await delay(200);
+    /*** JeeWoo 吉屋 BrandKindA id3 ***/
+    const element = document.getElementById("Ka_ID3");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKaID4 = async (event) => {
+    setValue(0);
+    await delay(200);
+    /*** 臺虎居餃屋 BrandKindA id4 ***/
+    const element = document.getElementById("Ka_ID4");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKaID5 = async (event) => {
+    setValue(0);
+    await delay(200);
+    /*** 日日禾日 BrandKindA id5 ***/
+    const element = document.getElementById("Ka_ID5");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKaID6 = async (event) => {
+    setValue(0);
+    await delay(200);
+    /*** 老優雅 BrandKindA id6 ***/
+    const element = document.getElementById("Ka_ID6");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKaID7 = async (event) => {
+    setValue(0);
+    await delay(200);
+    /*** 興波咖啡 BrandKindA id7 ***/
+    const element = document.getElementById("Ka_ID7");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  /*** 遇身心 BrandKindB ***/
+  const executeKbID1 = async (event) => {
+    //console.log("click executeTab");
+    setValue(1);
+    await delay(200);
+    //console.log("click");
+    /*** 寵物點子 BrandKindB id1 ***/
+    const element = document.getElementById("Kb_ID1");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKbID3 = async (event) => {
+    //console.log("click executeTab");
+    setValue(1);
+    await delay(200);
+    //console.log("click");
+    /*** Mon Bonbon BrandKindB id3 ***/
+    const element = document.getElementById("Kb_ID3");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  /*** 蒔生活 BrandKindC ***/
+  const executeKcID1 = async (event) => {
+    //console.log("click executeTab");
+    setValue(2);
+    await delay(200);
+    //console.log("click");
+    /*** 吉品養生 BrandKindC id1 ***/
+    const element = document.getElementById("Kc_ID1");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKcID2 = async (event) => {
+    //console.log("click executeTab");
+    setValue(2);
+    await delay(200);
+    //console.log("click");
+    /*** 花筏亭 BrandKindC id2 ***/
+    const element = document.getElementById("Kc_ID2");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKcID3 = async (event) => {
+    //console.log("click executeTab");
+    setValue(2);
+    await delay(200);
+    //console.log("click");
+    /*** 京町　山本屋 BrandKindC id3 ***/
+    const element = document.getElementById("Kc_ID3");
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const executeKcID4 = async (event) => {
+    //console.log("click executeTab");
+    setValue(2);
+    await delay(200);
+    //console.log("click");
+    /*** 好丘 BrandKindC id4 ***/
+    const element = document.getElementById("Kc_ID4");
     element.scrollIntoView({
       behavior: "smooth",
     });
@@ -467,10 +573,10 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
-                  {/*** 寵物點子 BrandKindC id1 ***/}
+                  {/*** 寵物點子 BrandKindB id1 ***/}
                   <Item>
                     <Box
-                      onClick={executeKcID1}
+                      onClick={executeKbID1}
                       id="1-7"
                       ml={0}
                       mr={-4}
@@ -633,9 +739,10 @@ export default function Map({
                 mt={{ xs: -8, md: -5.2 }}
               >
                 <Grid item xs={3}>
-                  {/*** 吉品養生 BrandKindB id1 ***/}
+                  {/*** 吉品養生 BrandKindC id1 ***/}
                   <Item>
                     <Box
+                      onClick={executeKcID1}
                       id="2-1"
                       ml={-2}
                       mr={-3}
@@ -864,9 +971,10 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
-                  {/*** 花筏亭 BrandKindB id2 ***/}
+                  {/*** 花筏亭 BrandKindC id2 ***/}
                   <Item>
                     <Box
+                      onClick={executeKcID2}
                       id="3-6-2"
                       ml={-7}
                       sx={{
@@ -886,9 +994,10 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
-                  {/*** 京町山本屋 BrandKindB id3 ***/}
+                  {/*** 京町山本屋 BrandKindC id3 ***/}
                   <Item>
                     <Box
+                      onClick={executeKcID3}
                       id="3-7"
                       ml={-4}
                       sx={{
@@ -916,6 +1025,7 @@ export default function Map({
                   {/*** 吉屋 BrandKindA id3 ***/}
                   <Item>
                     <Box
+                      onClick={executeKaID3}
                       id="3-9"
                       ml={-4}
                       sx={{
@@ -943,6 +1053,7 @@ export default function Map({
                   {/*** 臺虎居餃屋 BrandKindA id4 ***/}
                   <Item>
                     <Box
+                      onClick={executeKaID4}
                       id="3-11"
                       ml={-6}
                       mr={{ xs: 3, md: 4 }}
@@ -967,12 +1078,14 @@ export default function Map({
                   {/*** 日日禾日 BrandKindA id5 ***/}
                   <Item>
                     <Box
+                      onClick={executeKaID5}
                       id="3-13"
                       mt={3}
                       ml={-4}
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
+                        cursor: "pointer",
                       }}
                     >
                       <Image
@@ -991,9 +1104,10 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={3}>
-                  {/*** 好丘 BrandKindB id4 ***/}
+                  {/*** 好丘 BrandKindC id4 ***/}
                   <Item>
                     <Box
+                      onClick={executeKcID4}
                       id="3-15"
                       mt={3}
                       ml={-8}
@@ -1001,6 +1115,7 @@ export default function Map({
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
+                        cursor: "pointer",
                       }}
                     >
                       <Image
@@ -1039,12 +1154,14 @@ export default function Map({
                   {/*** 老優雅 BrandKindA id6 ***/}
                   <Item>
                     <Box
+                      onClick={executeKaID6}
                       id="3-17"
                       mt={3}
                       ml={-1}
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
+                        cursor: "pointer",
                       }}
                     >
                       <Image
@@ -1061,11 +1178,13 @@ export default function Map({
                   {/*** 興波咖啡 BrandKindA id7 ***/}
                   <Item>
                     <Box
+                      onClick={executeKaID7}
                       id="3-18"
                       mt={3}
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
+                        cursor: "pointer",
                       }}
                     >
                       <Image
@@ -1136,9 +1255,10 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
-                  {/*** CiPU BrandKindC id3 ***/}
+                  {/*** Mon Bonbon BrandKindB id3 ***/}
                   <Item>
                     <Box
+                      onClick={executeKbID3}
                       id="4-4-2"
                       mt={"-30px"}
                       ml={{ xs: -1.2, md: -4 }}
@@ -1276,7 +1396,7 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"享時光"}}){
+        brand(filter:{kind:{_eq:"1"}}){
             id
             name
             introduction
@@ -1284,6 +1404,10 @@ export async function getServerSideProps() {
               id 
               filename_disk
               }
+            logo{
+              id
+              filename_disk
+            }
             contact_us
           }
       }
@@ -1295,10 +1419,19 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"遇身心"}}){
+        brand(filter:{kind:{_eq:"2"}}){
             id
             name
             introduction
+            cover{
+              id 
+              filename_disk
+              }
+            logo{
+              id
+              filename_disk
+            }
+            contact_us
           }
       }
       `,
@@ -1309,10 +1442,19 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"蒔生活"}}){
+        brand(filter:{kind:{_eq:"3"}}){
             id
             name
             introduction
+            cover{
+              id 
+              filename_disk
+              }
+            logo{
+              id
+              filename_disk
+            }
+            contact_us
           }
       }
       `,

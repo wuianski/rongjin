@@ -6,8 +6,8 @@ export const getHomepagePosts = async () => {
         query HomepagePosts {
             about {
                 id
-                history
-                operations_team
+                history_tw
+                operations_team_tw
             }
         }
         `,

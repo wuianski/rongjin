@@ -359,7 +359,7 @@ export default function Nav({ menu }) {
                         indicatorColor="none"
                       >
                         <StyledTab label="關於榕錦" onClick={executeAbout} />
-                        <StyledTab label="最新消息" href="/news" />
+                        <StyledTab label="最新消息" />
                         <StyledTab label="活動訊息" {...a11yProps(2)} />
                         <StyledTab label="入駐品牌" {...a11yProps(3)} />
                         <StyledTab

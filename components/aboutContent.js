@@ -59,7 +59,7 @@ export default function AboutContent({ about }) {
                       fontFamily: "GenWanMin, Noto Serif TC",
                     }}
                     dangerouslySetInnerHTML={{
-                      __html: about.park_introduction,
+                      __html: about.park_introduction_tw,
                     }}
                   />
                 </ItemSub>
@@ -69,7 +69,7 @@ export default function AboutContent({ about }) {
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
                     }}
-                    dangerouslySetInnerHTML={{ __html: about.history }}
+                    dangerouslySetInnerHTML={{ __html: about.history_tw }}
                   />
                 </ItemSub>
               </Stack>
@@ -85,7 +85,7 @@ export default function AboutContent({ about }) {
                       fontFamily: "GenWanMin, Noto Serif TC",
                     }}
                     dangerouslySetInnerHTML={{
-                      __html: about.prospects,
+                      __html: about.prospects_tw,
                     }}
                   />
                 </ItemSub>
@@ -96,7 +96,7 @@ export default function AboutContent({ about }) {
                       fontFamily: "GenWanMin, Noto Serif TC",
                     }}
                     dangerouslySetInnerHTML={{
-                      __html: about.operations_team,
+                      __html: about.operations_team_tw,
                     }}
                   />
                 </ItemSub>

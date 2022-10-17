@@ -30,21 +30,30 @@ export default function BrandKindA({ brand_kind1 }) {
       introduction: b.introduction,
       coverPhoto:
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
+      logoPhoto: !!b.logo && !!b.logo.filename_disk ? b.logo.filename_disk : "",
       contactUs: b.contact_us,
     };
 
     return result;
   });
-  //console.log(brand1[0].ref);
+  //console.log(brand1[0].brandName);
 
   /*************************/
   /*** useInview setting ***/
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
+  const ref6 = useRef(null);
+  const ref7 = useRef(null);
   const isInView1 = useInView(ref1);
   const isInView2 = useInView(ref2);
   const isInView3 = useInView(ref3);
+  const isInView4 = useInView(ref4);
+  const isInView5 = useInView(ref5);
+  const isInView6 = useInView(ref6);
+  const isInView7 = useInView(ref7);
   useEffect(() => {
     const getInvew = async () => {
       if (isInView1 == true) {
@@ -53,28 +62,68 @@ export default function BrandKindA({ brand_kind1 }) {
         const element = document.getElementById("2-1");
         element.scrollIntoView({
           behavior: "smooth",
-          inline: "start",
+          //inline: "start",
         });
       } else if (isInView2 == true) {
         console.log("isInView2 invew");
-        const element = document.getElementById("3-6-1");
+        const element = document.getElementById("1-3");
         await delay(200);
         element.scrollIntoView({
           behavior: "smooth",
-          inline: "start",
+          //inline: "start",
         });
       } else if (isInView3 == true) {
         console.log("isInView3 invew");
+        const element = document.getElementById("1-7");
+        await delay(200);
+        element.scrollIntoView({
+          behavior: "smooth",
+          //inline: "start",
+        });
+      } else if (isInView4 == true) {
+        console.log("isInView4 invew");
+        const element = document.getElementById("1-12");
+        await delay(200);
+        element.scrollIntoView({
+          behavior: "smooth",
+          //inline: "start",
+        });
+      } else if (isInView5 == true) {
+        console.log("isInView5 invew");
+        const element = document.getElementById("1-7");
+        await delay(200);
+        element.scrollIntoView({
+          behavior: "smooth",
+          //inline: "start",
+        });
+      } else if (isInView6 == true) {
+        console.log("isInView6 invew");
+        const element = document.getElementById("2-7");
+        await delay(200);
+        element.scrollIntoView({
+          behavior: "smooth",
+          //inline: "start",
+        });
+      } else if (isInView7 == true) {
+        console.log("isInView7 invew");
         const element = document.getElementById("rightest");
         await delay(200);
         element.scrollIntoView({
           behavior: "smooth",
-          inline: "start",
+          //inline: "start",
         });
       }
     };
     getInvew();
-  }, [isInView1, isInView2, isInView3]);
+  }, [
+    isInView1,
+    isInView2,
+    isInView3,
+    isInView4,
+    isInView5,
+    isInView6,
+    isInView7,
+  ]);
 
   return (
     <>
@@ -94,7 +143,7 @@ export default function BrandKindA({ brand_kind1 }) {
         }}
       >
         {/*****************/}
-        {/*** 1st brand ***/}
+        {/*** 1st brand 九州鬆餅瓦芙 ***/}
         <Box
           sx={{
             color: "#000",
@@ -116,7 +165,6 @@ export default function BrandKindA({ brand_kind1 }) {
           >
             <Item>
               <Box
-                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -141,14 +189,36 @@ export default function BrandKindA({ brand_kind1 }) {
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
+                    //loader={myLoader}
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand1[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[0].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[0].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[0].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -170,7 +240,7 @@ export default function BrandKindA({ brand_kind1 }) {
             </Item>
             <Item>
               <Box
-                pt={1}
+                pt={0}
                 sx={{
                   textAlign: "left",
                   fontFamily: "GenYoGothic TW",
@@ -184,7 +254,7 @@ export default function BrandKindA({ brand_kind1 }) {
           </Stack>
         </Box>
         {/*****************/}
-        {/*** 2nd brand ***/}
+        {/*** 2nd brand 金錦町 ***/}
         <Box
           sx={{
             color: "#000",
@@ -206,7 +276,6 @@ export default function BrandKindA({ brand_kind1 }) {
           >
             <Item>
               <Box
-                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -231,14 +300,35 @@ export default function BrandKindA({ brand_kind1 }) {
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand1[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[1].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[1].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[1].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -258,10 +348,23 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[1].contactUs,
+                }}
+              ></Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
-        {/*** 3rd brand ***/}
+        {/*** 3rd brand JeeWoo 吉屋 ***/}
         <Box
           sx={{
             color: "#000",
@@ -283,7 +386,6 @@ export default function BrandKindA({ brand_kind1 }) {
           >
             <Item>
               <Box
-                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -293,12 +395,12 @@ export default function BrandKindA({ brand_kind1 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand1[0].brandName,
+                  __html: brand1[2].brandName,
                 }}
               ></Box>
             </Item>
             <Item>
-              {brand1[0].coverPhoto && (
+              {brand1[2].coverPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -308,14 +410,35 @@ export default function BrandKindA({ brand_kind1 }) {
                   }}
                   ml={"auto"}
                   mr={"auto"}
-                  mb={6}
+                  mt={-3}
                 >
                   <Image
                     className="brandCover"
-                    src={`http://localhost:8055/assets/${brand1[0].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[2].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[2].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[2].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
                     objectPosition="center"
                   />
                 </Box>
@@ -331,7 +454,460 @@ export default function BrandKindA({ brand_kind1 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand1[0].introduction,
+                  __html: brand1[2].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[2].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 4th brand 臺虎居餃屋 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          ref={ref4}
+          id="Ka_ID4"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[3].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[3].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "50vh",
+                    borderRadius: "200px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[3].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[3].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[3].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[3].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[3].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 5th brand 日日禾日 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          ref={ref5}
+          id="Ka_ID5"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[4].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[4].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "50vh",
+                    borderRadius: "200px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[4].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[4].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[4].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[4].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[4].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 6th brand 老優雅 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          ref={ref6}
+          id="Ka_ID6"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[5].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[5].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "50vh",
+                    borderRadius: "200px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[5].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[5].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[5].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[5].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[5].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 7th brand 興波咖啡 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          ref={ref7}
+          id="Ka_ID7"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 3 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[6].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[6].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "50vh",
+                    borderRadius: "200px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[6].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[6].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "69px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[6].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[6].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[6].contactUs,
                 }}
               ></Box>
             </Item>

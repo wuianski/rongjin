@@ -37,11 +37,11 @@ export async function getServerSideProps() {
         query  {
             about{
               id
-              park_introduction
-              history
-              prospects
-              operations_team
-              transportation
+              park_introduction_tw
+              history_tw
+              prospects_tw
+              operations_team_tw
+              transportation_tw
             }
         }
         `,
