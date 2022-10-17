@@ -15,8 +15,8 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
-import menuOpen from "../public/IMGs/menuOpen.png";
-import menuClose from "../public/IMGs/menuClose.png";
+import menuOpen from "../public/imgs/menuOpen.png";
+import menuClose from "../public/imgs/menuClose.png";
 import logo from "../public/imgs/logo.png";
 import logoLight from "../public/imgs/logo_light.png";
 import yt from "../public/imgs/nav/yt.png";
