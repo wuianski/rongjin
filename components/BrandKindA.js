@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 import Box from "@mui/material/Box";
 import Link from "next/link";
@@ -40,89 +41,117 @@ export default function BrandKindA({ brand_kind1 }) {
 
   /*************************/
   /*** useInview setting ***/
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const ref5 = useRef(null);
-  const ref6 = useRef(null);
-  const ref7 = useRef(null);
-  const isInView1 = useInView(ref1);
-  const isInView2 = useInView(ref2);
-  const isInView3 = useInView(ref3);
-  const isInView4 = useInView(ref4);
-  const isInView5 = useInView(ref5);
-  const isInView6 = useInView(ref6);
-  const isInView7 = useInView(ref7);
+  const BK1ref1 = useRef(null);
+  const BK1ref2 = useRef(null);
+  const BK1ref3 = useRef(null);
+  const BK1ref4 = useRef(null);
+  const BK1ref5 = useRef(null);
+  const BK1ref6 = useRef(null);
+  const BK1ref7 = useRef(null);
+  const BK1isInView1 = useInView(BK1ref1);
+  const BK1isInView2 = useInView(BK1ref2);
+  const BK1isInView3 = useInView(BK1ref3);
+  const BK1isInView4 = useInView(BK1ref4);
+  const BK1isInView5 = useInView(BK1ref5);
+  const BK1isInView6 = useInView(BK1ref6);
+  const BK1isInView7 = useInView(BK1ref7);
   useEffect(() => {
-    const getInvew = async () => {
-      if (isInView1 == true) {
-        console.log("isInView1 invew");
-        await delay(200);
-        const element = document.getElementById("2-1");
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView2 == true) {
-        console.log("isInView2 invew");
-        const element = document.getElementById("1-3");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView3 == true) {
-        console.log("isInView3 invew");
-        const element = document.getElementById("1-7");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView4 == true) {
-        console.log("isInView4 invew");
-        const element = document.getElementById("1-12");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView5 == true) {
-        console.log("isInView5 invew");
-        const element = document.getElementById("1-7");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView6 == true) {
-        console.log("isInView6 invew");
-        const element = document.getElementById("2-7");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      } else if (isInView7 == true) {
-        console.log("isInView7 invew");
-        const element = document.getElementById("rightest");
-        await delay(200);
-        element.scrollIntoView({
-          behavior: "smooth",
-          //inline: "start",
-        });
-      }
-    };
-    getInvew();
+    // const getInvew = async () => {
+    if (BK1isInView1 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID1"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView1 invew");
+      scrollIntoView(document.getElementById("3-4"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView2 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID2"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView2 invew");
+      scrollIntoView(document.getElementById("3-6-1"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView3 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID3"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView3 invew");
+      scrollIntoView(document.getElementById("3-9"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView4 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID4"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView4 invew");
+      scrollIntoView(document.getElementById("3-11"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView5 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID5"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView5 invew");
+      scrollIntoView(document.getElementById("3-13"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView6 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID6"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView6 invew");
+      scrollIntoView(document.getElementById("3-17"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView7 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID7"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView7 invew");
+      scrollIntoView(document.getElementById("3-18"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    }
+    // };
+    // getInvew();
   }, [
-    isInView1,
-    isInView2,
-    isInView3,
-    isInView4,
-    isInView5,
-    isInView6,
-    isInView7,
+    BK1isInView1,
+    BK1isInView2,
+    BK1isInView3,
+    BK1isInView4,
+    BK1isInView5,
+    BK1isInView6,
+    BK1isInView7,
   ]);
 
   return (
@@ -153,7 +182,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref1}
           id="Ka_ID1"
         >
           <Stack
@@ -190,6 +218,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref1}
                 >
                   <Image
                     //loader={myLoader}
@@ -264,7 +293,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref2}
           id="Ka_ID2"
         >
           <Stack
@@ -301,6 +329,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref2}
                 >
                   <Image
                     className="brandCover"
@@ -374,7 +403,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref3}
           id="Ka_ID3"
         >
           <Stack
@@ -411,6 +439,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref3}
                 >
                   <Image
                     className="brandCover"
@@ -484,7 +513,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref4}
           id="Ka_ID4"
         >
           <Stack
@@ -521,6 +549,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref4}
                 >
                   <Image
                     className="brandCover"
@@ -594,7 +623,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref5}
           id="Ka_ID5"
         >
           <Stack
@@ -631,6 +659,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref5}
                 >
                   <Image
                     className="brandCover"
@@ -704,7 +733,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref6}
           id="Ka_ID6"
         >
           <Stack
@@ -741,6 +769,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref6}
                 >
                   <Image
                     className="brandCover"
@@ -814,7 +843,6 @@ export default function BrandKindA({ brand_kind1 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref7}
           id="Ka_ID7"
         >
           <Stack
@@ -851,6 +879,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK1ref7}
                 >
                   <Image
                     className="brandCover"

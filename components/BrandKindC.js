@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 import Box from "@mui/material/Box";
 import Link from "next/link";
@@ -15,6 +16,25 @@ const Item = styled(Paper)(({ theme }) => ({
   background: "none",
   boxShadow: "none",
 }));
+
+/******************/
+function Section({ children }) {
+  // const ref = useRef(null);
+  // const isInView = useInView(ref, { once: false });
+  // useEffect(() => {
+  //   console.log("Element is in view: ", isInView);
+  // }, [isInView]);
+
+  return (
+    <section>
+      <Box sx={{ background: "none", height: 300 }}>{children}</Box>
+    </section>
+  );
+}
+
+/*************/
+/*** delay ***/
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function BrandKindC({ brand_kind3 }) {
   /*****************************/
@@ -36,41 +56,70 @@ export default function BrandKindC({ brand_kind3 }) {
 
   /*************************/
   /*** useInview setting ***/
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const isInView1 = useInView(ref1);
-  const isInView2 = useInView(ref2);
-  const isInView3 = useInView(ref3);
-  const isInView4 = useInView(ref4);
+  const BK3ref1 = useRef(null);
+  const BK3ref2 = useRef(null);
+  const BK3ref3 = useRef(null);
+  const BK3ref4 = useRef(null);
+  const BK3isInView1 = useInView(BK3ref1);
+  const BK3isInView2 = useInView(BK3ref2);
+  const BK3isInView3 = useInView(BK3ref3);
+  const BK3isInView4 = useInView(BK3ref4);
+
   useEffect(() => {
-    if (isInView1 == true) {
-      console.log("isInView1 invew");
-      const element = document.getElementById("2-1");
-      element.scrollIntoView({
+    // const getInvew = async () => {
+    if (BK3isInView1 === true) {
+      // scrollIntoView(document.getElementById("Kc_ID1"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK3isInView1 invew");
+      scrollIntoView(document.getElementById("2-1"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
-    } else if (isInView2 == true) {
-      console.log("isInView2 invew");
-      const element = document.getElementById("1-4");
-      element.scrollIntoView({
+      //await delay(0);
+    } else if (BK3isInView2 === true) {
+      // scrollIntoView(document.getElementById("Kc_ID2"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK3isInView2 invew");
+      scrollIntoView(document.getElementById("3-6-2"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
-    } else if (isInView3 == true) {
-      console.log("isInView3 invew");
-      const element = document.getElementById("3-6-1");
-      element.scrollIntoView({
+    } else if (BK3isInView3 === true) {
+      // scrollIntoView(document.getElementById("Kc_ID3"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK3isInView3 invew");
+      scrollIntoView(document.getElementById("3-7"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
-    } else if (isInView4 == true) {
-      console.log("isInView4 invew");
-      const element = document.getElementById("3-16");
-      element.scrollIntoView({
+    } else if (BK3isInView4 === true) {
+      // scrollIntoView(document.getElementById("Kc_ID4"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK3isInView4 invew");
+      scrollIntoView(document.getElementById("3-15"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
     }
-  }, [isInView1, isInView2, isInView3, isInView4]);
+    // };
+    // getInvew();
+  }, [BK3isInView1, BK3isInView2, BK3isInView3, BK3isInView4]);
 
   return (
     <>
@@ -100,7 +149,6 @@ export default function BrandKindC({ brand_kind3 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref1}
           id="Kc_ID1"
         >
           <Stack
@@ -137,6 +185,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK3ref1}
                 >
                   <Image
                     //loader={myLoader}
@@ -200,6 +249,7 @@ export default function BrandKindC({ brand_kind3 }) {
             </Item>
           </Stack>
         </Box>
+        {/* <Section /> */}
         {/*****************/}
         {/*** 2nd brand 花筏亭 ***/}
         <Box
@@ -211,7 +261,6 @@ export default function BrandKindC({ brand_kind3 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref2}
           id="Kc_ID2"
         >
           <Stack
@@ -223,6 +272,7 @@ export default function BrandKindC({ brand_kind3 }) {
           >
             <Item>
               <Box
+                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -248,6 +298,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK3ref2}
                 >
                   <Image
                     className="brandCover"
@@ -310,6 +361,7 @@ export default function BrandKindC({ brand_kind3 }) {
             </Item>
           </Stack>
         </Box>
+        {/* <Section /> */}
         {/*****************/}
         {/*** 3rd brand 京町　山本屋 ***/}
         <Box
@@ -321,7 +373,6 @@ export default function BrandKindC({ brand_kind3 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref3}
           id="Kc_ID3"
         >
           <Stack
@@ -333,6 +384,7 @@ export default function BrandKindC({ brand_kind3 }) {
           >
             <Item>
               <Box
+                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -358,6 +410,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK3ref3}
                 >
                   <Image
                     className="brandCover"
@@ -420,6 +473,8 @@ export default function BrandKindC({ brand_kind3 }) {
             </Item>
           </Stack>
         </Box>
+        {/* <Section /> */}
+        {/* <Box sx={{ backgroundColor: "red", height: 200 }}></Box> */}
         {/*****************/}
         {/*** 4th brand 好丘 ***/}
         <Box
@@ -431,7 +486,6 @@ export default function BrandKindC({ brand_kind3 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref4}
           id="Kc_ID4"
         >
           <Stack
@@ -443,6 +497,7 @@ export default function BrandKindC({ brand_kind3 }) {
           >
             <Item>
               <Box
+                pt={3}
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
@@ -468,6 +523,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK3ref4}
                 >
                   <Image
                     className="brandCover"
@@ -530,6 +586,8 @@ export default function BrandKindC({ brand_kind3 }) {
             </Item>
           </Stack>
         </Box>
+        {/* <Section /> */}
+        {/* <Box sx={{ backgroundColor: "red", height: 200 }}></Box> */}
       </Box>
     </>
   );

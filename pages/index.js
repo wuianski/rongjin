@@ -33,12 +33,6 @@ export default function Home({ about, menu }) {
       </Head>
 
       <main className={styles.main}>
-        {/* <AnimatePresence exitBeforeEnter> */}
-        {/* <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
-          exit={{ opacity: 1, y: "-100vh", transition: { duration: 0.3 } }}
-        > */}
         <Box
           sx={{
             position: "absolute",

@@ -163,6 +163,16 @@ export default function Nav({ menu }) {
     setOpen(false);
     router.push({ pathname: "/" });
   };
+  const executeGoMapD = (event) => {
+    console.log("click executeGoTab4");
+    setOpen(false);
+    router.push({ pathname: "/map", query: { cat: 4 } });
+  };
+  const executeGoMapE = (event) => {
+    console.log("click executeGoTab5");
+    setOpen(false);
+    router.push({ pathname: "/map", query: { cat: 5 } });
+  };
 
   return (
     <>
@@ -359,7 +369,7 @@ export default function Nav({ menu }) {
                         indicatorColor="none"
                       >
                         <StyledTab label="關於榕錦" onClick={executeAbout} />
-                        <StyledTab label="最新消息" />
+                        <StyledTab label="最新消息" href="/news" />
                         <StyledTab label="活動訊息" {...a11yProps(2)} />
                         <StyledTab label="入駐品牌" {...a11yProps(3)} />
                         <StyledTab
@@ -383,8 +393,9 @@ export default function Nav({ menu }) {
                               opacity: "0.8",
                               minHeight: { xs: "42px", md: "48px" },
                             }}
+                            onClick={executeGoMapD}
                           >
-                            展覽／市集
+                            市集／展覽
                           </Box>
                           <Box
                             sx={{
@@ -395,6 +406,7 @@ export default function Nav({ menu }) {
                               opacity: "0.8",
                               minHeight: { xs: "42px", md: "48px" },
                             }}
+                            onClick={executeGoMapE}
                           >
                             講座／課程
                           </Box>
@@ -430,7 +442,7 @@ export default function Nav({ menu }) {
                             }}
                             onClick={executeGoMapB}
                           >
-                            蒔生活
+                            遇身心
                           </Box>
                           <Box
                             sx={{
@@ -443,7 +455,7 @@ export default function Nav({ menu }) {
                             }}
                             onClick={executeGoMapC}
                           >
-                            遇身心
+                            蒔生活
                           </Box>
                         </Box>
                       </TabPanel>

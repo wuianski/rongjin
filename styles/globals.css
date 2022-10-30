@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap');
 @font-face {
   font-family: 'Garamond-Regular';
   src: url('/assets/fonts/Garamond/Garamond-Regular.ttf');
@@ -58,8 +59,8 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #000;
+    background: #fff;
   }
 }
 
@@ -85,4 +86,23 @@ p{
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.newsTitle p {
+  line-height: 1 !important;
+  margin:0;
+}
+.eventTitle p {
+  line-height: 1 !important;
+  margin:0;
+}
+@media only screen and (max-width: 900px) {
+  .newsTitle p{
+    line-height: 1 !important;
+    margin:0;
+  }
+  .eventTitle p {
+    line-height: 1 !important;
+    margin:0;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 import Box from "@mui/material/Box";
 import Link from "next/link";
@@ -36,33 +37,51 @@ export default function BrandKindB({ brand_kind2 }) {
 
   /*************************/
   /*** useInview setting ***/
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const isInView1 = useInView(ref1);
-  const isInView2 = useInView(ref2);
-  const isInView3 = useInView(ref3);
+  const BK2ref1 = useRef(null);
+  const BK2ref2 = useRef(null);
+  const BK2ref3 = useRef(null);
+  const BK2isInView1 = useInView(BK2ref1);
+  const BK2isInView2 = useInView(BK2ref2);
+  const BK2isInView3 = useInView(BK2ref3);
   useEffect(() => {
-    if (isInView1 == true) {
-      console.log("isInView1 invew");
-      const element = document.getElementById("1-12");
-      element.scrollIntoView({
+    if (BK2isInView1 == true) {
+      // scrollIntoView(document.getElementById("Kb_ID1"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK2isInView1 invew");
+      scrollIntoView(document.getElementById("1-7"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
-    } else if (isInView2 == true) {
-      console.log("isInView2 invew");
-      const element = document.getElementById("rightest");
-      element.scrollIntoView({
+    } else if (BK2isInView2 == true) {
+      // scrollIntoView(document.getElementById("Kb_ID2"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK2isInView2 invew");
+      scrollIntoView(document.getElementById("rightest"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
-    } else if (isInView3 == true) {
-      console.log("isInView3 invew");
-      const element = document.getElementById("1-4");
-      element.scrollIntoView({
+    } else if (BK2isInView3 == true) {
+      // scrollIntoView(document.getElementById("Kb_ID3"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK2isInView3 invew");
+      scrollIntoView(document.getElementById("4-4-2"), {
         behavior: "smooth",
+        block: "start",
+        inline: "start",
       });
     }
-  }, [isInView1, isInView2, isInView3]);
+  }, [BK2isInView1, BK2isInView2, BK2isInView3]);
 
   return (
     <>
@@ -92,7 +111,6 @@ export default function BrandKindB({ brand_kind2 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref1}
           id="Kb_ID1"
         >
           <Stack
@@ -128,6 +146,7 @@ export default function BrandKindB({ brand_kind2 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK2ref1}
                 >
                   <Image
                     className="brandCover"
@@ -204,7 +223,6 @@ export default function BrandKindB({ brand_kind2 }) {
           mr={1}
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
-          ref={ref3}
           id="Kb_ID3"
         >
           <Stack
@@ -241,6 +259,7 @@ export default function BrandKindB({ brand_kind2 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
+                  ref={BK2ref3}
                 >
                   <Image
                     className="brandCover"

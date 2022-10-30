@@ -1,5 +1,6 @@
 //import * as React from "react";
 import React, { useRef, useState, useEffect } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -10,6 +11,8 @@ import fetchData from "../lib/api";
 import BrandKindA from "../components/BrandKindA";
 import BrandKindB from "../components/BrandKindB";
 import BrandKindC from "../components/BrandKindC";
+import EventKindA from "../components/EventKindA";
+import EventKindD from "../components/EventKindD";
 import Link from "next/link";
 
 import PropTypes from "prop-types";
@@ -22,6 +25,12 @@ import Nav from "../components/nav";
 
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
+
+import Modal from "@mui/material/Modal";
+
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import Slider from "react-slick";
 
 import Image from "next/image";
 import roadName1 from "../public/imgs/map/roadName1.png";
@@ -49,7 +58,6 @@ import e1_12 from "../public/imgs/map/elements/1-12.png";
 import e1_13 from "../public/imgs/map/elements/1-13.png";
 import e3_15 from "../public/imgs/map/elements/3-15.png";
 import e2_5 from "../public/imgs/map/elements/2-5.png";
-import e1_14 from "../public/imgs/map/elements/1-14.png";
 import e1_14_b from "../public/imgs/map/elements/1-14_b.png";
 import e3_17 from "../public/imgs/map/elements/3-17.png";
 import e3_18 from "../public/imgs/map/elements/3-18.png";
@@ -58,6 +66,7 @@ import e2_8 from "../public/imgs/map/elements/2-8.png";
 import e3_16 from "../public/imgs/map/elements/3-16.png";
 import e1_5 from "../public/imgs/map/elements/1-5.png";
 import e1_2_1 from "../public/imgs/map/elements/1-2-1.png";
+import spot_img from "../public/imgs/spot.png";
 
 /*****************/
 /*** map stack ***/
@@ -136,6 +145,30 @@ function a11yProps(index) {
 /*************/
 /*** delay ***/
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+/*********************/
+/*** modal setting ***/
+const style = {
+  position: "absolute",
+  //top: "50%",
+  //left: "50%",
+  //transform: "translate(-50%, -50%)",
+  width: "100vw",
+  height: "100vh",
+  bgcolor: "#666",
+  //border: "2px solid #000",
+  //boxShadow: 24,
+  //p: 0,
+  // marginRight: "auto",
+  // marginLeft: "auto",
+};
+const settings = {
+  arrows: false,
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 /*********************/
 /*** main function ***/
@@ -144,6 +177,9 @@ export default function Map({
   brand_kind_2,
   brand_kind_3,
   menu,
+  event_kind_1,
+  event_kind_4,
+  spot,
 }) {
   /*****************/
   /*** tab state ***/
@@ -151,6 +187,12 @@ export default function Map({
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  /*********************/
+  /*** modal state ***/
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   /***********************************************************************/
   /*** use router.query to get value from router.push in nav component ***/
@@ -171,6 +213,14 @@ export default function Map({
       //console.log("switch to tab3");
       /*** switch to tab3 ***/
       setValue(2);
+    } else if (tabState === "4") {
+      //console.log("switch to tab3");
+      /*** switch to tab3 ***/
+      setValue(3);
+    } else if (tabState === "5") {
+      //console.log("switch to tab3");
+      /*** switch to tab3 ***/
+      setValue(4);
     }
   }, [tabState]);
 
@@ -180,65 +230,79 @@ export default function Map({
   /*** 享時光 BrandKindA ***/
   const executeKaID1 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** 九州鬆餅 BrandKindA id1 ***/
-    const element = document.getElementById("Ka_ID1");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID1"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID2 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** 金錦町 BrandKindA id2 ***/
-    const element = document.getElementById("Ka_ID2");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID2"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID3 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** JeeWoo 吉屋 BrandKindA id3 ***/
-    const element = document.getElementById("Ka_ID3");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID3"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID4 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** 臺虎居餃屋 BrandKindA id4 ***/
-    const element = document.getElementById("Ka_ID4");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID4"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID5 = async (event) => {
     setValue(0);
-    await delay(200);
+    // delay(200);
     /*** 日日禾日 BrandKindA id5 ***/
-    const element = document.getElementById("Ka_ID5");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID5"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID6 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** 老優雅 BrandKindA id6 ***/
-    const element = document.getElementById("Ka_ID6");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID6"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKaID7 = async (event) => {
     setValue(0);
-    await delay(200);
+    //await delay(200);
     /*** 興波咖啡 BrandKindA id7 ***/
-    const element = document.getElementById("Ka_ID7");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID7"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
 
@@ -246,23 +310,27 @@ export default function Map({
   const executeKbID1 = async (event) => {
     //console.log("click executeTab");
     setValue(1);
-    await delay(200);
+    //await delay(200);
     //console.log("click");
     /*** 寵物點子 BrandKindB id1 ***/
-    const element = document.getElementById("Kb_ID1");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Kb_ID1"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKbID3 = async (event) => {
     //console.log("click executeTab");
     setValue(1);
-    await delay(200);
+    // await delay(200);
     //console.log("click");
     /*** Mon Bonbon BrandKindB id3 ***/
-    const element = document.getElementById("Kb_ID3");
-    element.scrollIntoView({
+    await delay(200);
+    scrollIntoView(document.getElementById("Kb_ID3"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
 
@@ -273,9 +341,10 @@ export default function Map({
     await delay(200);
     //console.log("click");
     /*** 吉品養生 BrandKindC id1 ***/
-    const element = document.getElementById("Kc_ID1");
-    element.scrollIntoView({
+    scrollIntoView(document.getElementById("Kc_ID1"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKcID2 = async (event) => {
@@ -284,9 +353,10 @@ export default function Map({
     await delay(200);
     //console.log("click");
     /*** 花筏亭 BrandKindC id2 ***/
-    const element = document.getElementById("Kc_ID2");
-    element.scrollIntoView({
+    scrollIntoView(document.getElementById("Kc_ID2"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKcID3 = async (event) => {
@@ -295,9 +365,10 @@ export default function Map({
     await delay(200);
     //console.log("click");
     /*** 京町　山本屋 BrandKindC id3 ***/
-    const element = document.getElementById("Kc_ID3");
-    element.scrollIntoView({
+    scrollIntoView(document.getElementById("Kc_ID3"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
   const executeKcID4 = async (event) => {
@@ -306,11 +377,42 @@ export default function Map({
     await delay(200);
     //console.log("click");
     /*** 好丘 BrandKindC id4 ***/
-    const element = document.getElementById("Kc_ID4");
-    element.scrollIntoView({
+    scrollIntoView(document.getElementById("Kc_ID4"), {
       behavior: "smooth",
+      block: "start",
+      inline: "start",
     });
   };
+
+  /*****************************/
+  /*** organize spot's data ***/
+  const mySpot = spot.spot.map((s) => {
+    const result = {
+      id: s.id,
+      name: s.name,
+      image:
+        s.image &&
+        s.image.map((s_img, i) => {
+          return s_img.directus_files_id.filename_disk;
+        }),
+    };
+
+    return result;
+  });
+  //console.log(mySpot[0].image);
+  /*****************************/
+  /*** slider ***/
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
 
   return (
     <>
@@ -482,9 +584,50 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
+                  {/*** spot_8 ***/}
                   <Item>
-                    <Box id="1-2-2"></Box>
+                    <Box
+                      id="1-2-2"
+                      mr={3}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                        cursor: "pointer",
+                      }}
+                      onClick={handleOpen}
+                    >
+                      <Image
+                        src={spot_img}
+                        alt="element"
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={2}>
+                  {/*** spot_9 ***/}
+                  <Item>
+                    <Box
+                      id="1-2-3"
+                      mr={3}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <Image
+                        src={spot_img}
+                        alt="element"
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </Box>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -510,6 +653,24 @@ export default function Map({
                 </Grid>
                 <Grid item xs={1}>
                   <Item>
+                    {/*** spot_10 ***/}
+                    <Box
+                      id="1-4-x"
+                      mr={-8}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <Image
+                        src={spot_img}
+                        alt="element"
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </Box>
                     <Box
                       id="1-4"
                       mr={-8}
@@ -1371,6 +1532,8 @@ export default function Map({
                 <StyledTab label="享時光" {...a11yProps(0)} />
                 <StyledTab label="遇身心" {...a11yProps(1)} />
                 <StyledTab label="蒔生活" {...a11yProps(2)} />
+                <StyledTab label="市集/展覽" {...a11yProps(3)} />
+                <StyledTab label="講座/課程" {...a11yProps(4)} />
               </StyledTabs>
             </Box>
 
@@ -1383,8 +1546,68 @@ export default function Map({
             <TabPanel value={value} index={2}>
               <BrandKindC brand_kind3={brand_kind_3.brand} />
             </TabPanel>
+            <TabPanel value={value} index={3}>
+              <EventKindA event_kind1={event_kind_1.event} />
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              <EventKindD event_kind4={event_kind_4.event} />
+            </TabPanel>
           </Box>
         </Box>
+
+        {/************/}
+        {/*** modal ***/}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Box
+              onClick={handleClose}
+              sx={{
+                position: "absolute",
+                right: 0,
+                top: 0,
+                width: 80,
+                height: 80,
+                backgroundColor: "#fff",
+                textAlign: "center",
+                lineHeight: "70px",
+                cursor: "pointer",
+                zIndex: 99,
+              }}
+            >
+              close
+            </Box>
+            <Slider {...settings}>
+              {mySpot[0].image &&
+                mySpot[0].image.map((img, i) => (
+                  <Box key={i}>
+                    <Box
+                      mt={"10vh"}
+                      sx={{
+                        position: "relative",
+                        width: "80vw",
+                        height: "80vh",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                    >
+                      <Image
+                        src={`${process.env.DIRECTUS_URL}/assets/${img}`}
+                        alt="bg"
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </Box>
+                  </Box>
+                ))}
+            </Slider>
+          </Box>
+        </Modal>
       </Box>
     </>
   );
@@ -1392,7 +1615,15 @@ export default function Map({
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [brand_kind_1, brand_kind_2, brand_kind_3, menu] = await Promise.all([
+  const [
+    brand_kind_1,
+    brand_kind_2,
+    brand_kind_3,
+    menu,
+    event_kind_1,
+    event_kind_4,
+    spot,
+  ] = await Promise.all([
     await fetchData(
       `
       query {
@@ -1476,6 +1707,100 @@ export async function getServerSideProps() {
         variables: {},
       }
     ),
+    await fetchData(
+      `
+      query {
+        event (
+          filter:{
+            status:{_eq:"published"},
+            kind:{_eq:"1"} ,
+            # location:{_eq:"1"} ,
+            # startDate: {_between:[ "2022-08-01", "2022-08-10"]},
+            # startDate: {_between:[ "$NOW(-1 days)", "$NOW(+1 days)"]},
+          },
+          # limit:4,
+          sort:["sort", "-startDate"]
+        ) 
+        {
+            id
+            title
+            cover{
+              id 
+              filename_disk
+            }
+            main_content
+            sub_content
+            location
+            status 
+            startDate
+            endDate
+            startTime
+            endTime
+            kind
+        }
+      }
+      `,
+      {
+        variables: {},
+      }
+    ),
+    await fetchData(
+      `
+      query {
+        event (
+          filter:{
+            status:{_eq:"published"},
+            kind:{_eq:"4"} ,
+            # location:{_eq:"1"} ,
+            # startDate: {_between:[ "2022-08-01", "2022-08-10"]},
+            # startDate: {_between:[ "$NOW(-1 days)", "$NOW(+1 days)"]},
+          },
+          # limit:4,
+          sort:["sort", "-startDate"]
+        ) 
+        {
+            id
+            title
+            cover{
+              id 
+              filename_disk
+            }
+            main_content
+            sub_content
+            location
+            status 
+            startDate
+            endDate
+            startTime
+            endTime
+            kind
+        }
+      }
+      `,
+      {
+        variables: {},
+      }
+    ),
+    await fetchData(
+      `
+      query {
+        spot {
+          id
+          name
+          image {
+            id
+            directus_files_id {
+                id
+                filename_disk
+            }
+          }
+        }
+      }
+      `,
+      {
+        variables: {},
+      }
+    ),
   ]);
 
   return {
@@ -1484,6 +1809,9 @@ export async function getServerSideProps() {
       brand_kind_2: brand_kind_2.data,
       brand_kind_3: brand_kind_3.data,
       menu: menu.data,
+      event_kind_1: event_kind_1.data,
+      event_kind_4: event_kind_4.data,
+      spot: spot.data,
     },
     //revalidate: 1,
   };

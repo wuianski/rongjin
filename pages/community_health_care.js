@@ -62,12 +62,12 @@ export default function Community_health_care({ about, menu }) {
       <Box>
         <Nav menu={menu.menu} />
       </Box>
-      <Box sx={{ backgroundColor: "#fff" }}>
+      <Box>
         <Box
-          ml={{ xs: "auto", md: 23 }}
-          mr={{ xs: "auto", md: 23 }}
+          mt={{ xs: 23, md: 23 }}
+          ml="auto"
+          mr="auto"
           sx={{
-            backgroundColor: "#fff",
             width: { xs: "100%", md: "70vw" },
             position: "relative",
             display: "block",
@@ -80,7 +80,6 @@ export default function Community_health_care({ about, menu }) {
           >
             <Item>
               <Box
-                mt={{ xs: 23, md: 23 }}
                 sx={{
                   position: "relative",
                   height: { xs: 200, md: 512 },
