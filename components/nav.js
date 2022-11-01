@@ -442,7 +442,7 @@ export default function Nav({ menu }) {
                             }}
                             onClick={executeGoMapB}
                           >
-                            遇身心
+                            蒔生活
                           </Box>
                           <Box
                             sx={{
@@ -455,7 +455,7 @@ export default function Nav({ menu }) {
                             }}
                             onClick={executeGoMapC}
                           >
-                            蒔生活
+                            遇身心
                           </Box>
                         </Box>
                       </TabPanel>

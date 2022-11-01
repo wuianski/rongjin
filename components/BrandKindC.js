@@ -153,7 +153,7 @@ export default function BrandKindC({ brand_kind3 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -180,7 +180,7 @@ export default function BrandKindC({ brand_kind3 }) {
                     position: "relative",
                     width: "100%",
                     height: { xs: "30vh", md: "50vh" },
-                    borderRadius: "200px",
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -205,7 +205,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -265,7 +265,7 @@ export default function BrandKindC({ brand_kind3 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -292,8 +292,8 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -317,7 +317,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -377,7 +377,7 @@ export default function BrandKindC({ brand_kind3 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -404,8 +404,8 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -490,7 +490,7 @@ export default function BrandKindC({ brand_kind3 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -517,8 +517,8 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -542,7 +542,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}

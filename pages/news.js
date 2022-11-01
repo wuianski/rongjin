@@ -95,7 +95,8 @@ export default function news({ news, menu }) {
                       sx={{
                         position: "relative",
                         width: "100%",
-                        height: 737,
+                        height: { xs: "30vh", md: "50vh" },
+
                         borderRadius: "20px",
                       }}
                       ml={"auto"}

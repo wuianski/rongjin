@@ -58,26 +58,28 @@ export default function EventKindD({ event_kind4 }) {
         !!e.cover && !!e.cover.filename_disk ? e.cover.filename_disk : "",
       main_content: e.main_content,
       sub_content: e.sub_content,
-      location4Id: e.location && e.location ? e.location : "",
-      location:
-        e.location &&
-        e.location.map((l, i) => {
-          if (l == 1) {
-            return "綠沐廣場";
-          } else if (l == 2) {
-            return "時光巷弄";
-          } else if (l == 3) {
-            return "香椿露台";
-          } else if (l == 4) {
-            return "閱讀客廳";
-          } else if (l == 5) {
-            return "時光廣場";
-          } else if (l == 6) {
-            return "小曉露台";
-          } else if (l == 7) {
-            return "木棧道";
-          }
-        }),
+      location4Id: e.location_1 && e.location_1 ? e.location_1 : "",
+      location_1: e.location_1,
+      location_2: e.location_2,
+      // location:
+      //   e.location &&
+      //   e.location.map((l, i) => {
+      //     if (l == 1) {
+      //       return "綠沐廣場";
+      //     } else if (l == 2) {
+      //       return "時光巷弄";
+      //     } else if (l == 3) {
+      //       return "香椿露台";
+      //     } else if (l == 4) {
+      //       return "閱讀客廳";
+      //     } else if (l == 5) {
+      //       return "時光廣場";
+      //     } else if (l == 6) {
+      //       return "小曉露台";
+      //     } else if (l == 7) {
+      //       return "木棧道";
+      //     }
+      //   }),
       startDate: e.startDate,
       endDate: e.endDate,
       startTime: e.startTime,
@@ -158,7 +160,7 @@ export default function EventKindD({ event_kind4 }) {
               >
                 <Stack
                   direction={{ xs: "column", md: "column" }}
-                  spacing={{ xs: 1, md: 3 }}
+                  spacing={{ xs: 1, md: 5 }}
                   mt={{ xs: 2, md: -2 }}
                   ml={0}
                   mr={0}
@@ -189,7 +191,7 @@ export default function EventKindD({ event_kind4 }) {
                           sx={{
                             position: "relative",
                             width: "100%",
-                            height: { xs: "30vh", md: "70vh" },
+                            height: { xs: "30vh", md: "50vh" },
                             borderRadius: "20px",
                           }}
                           ml={"auto"}
@@ -212,33 +214,41 @@ export default function EventKindD({ event_kind4 }) {
                   {/*** date and time ***/}
                   <Item>
                     {/*** date  ***/}
-                    <Box
-                      pt={0}
-                      sx={{
-                        textAlign: "center",
-                        fontFamily: "Garamond",
-                        fontWeight: 400,
-                      }}
-                    >
-                      <Box component="span">{event.startDate}</Box>
-                      <Box component="span">~</Box>
-                      <Box component="span">{event.endDate}</Box>
-                    </Box>
+                    {event.startDate && (
+                      <>
+                        <Box
+                          pt={0}
+                          sx={{
+                            textAlign: "center",
+                            fontFamily: "Garamond",
+                            fontWeight: 400,
+                          }}
+                        >
+                          <Box component="span">{event.startDate}</Box>
+                          <Box component="span">~</Box>
+                          <Box component="span">{event.endDate}</Box>
+                        </Box>
+                      </>
+                    )}
                     {/*** time  ***/}
-                    <Box
-                      pt={0}
-                      sx={{
-                        textAlign: "center",
-                        fontFamily: "Garamond",
-                        fontWeight: 400,
-                      }}
-                    >
-                      <Box component="span">{event.startTime}</Box>
-                      <Box component="span">~</Box>
-                      <Box component="span">{event.endTime}</Box>
-                    </Box>
+                    {event.startTime && (
+                      <>
+                        <Box
+                          pt={0}
+                          sx={{
+                            textAlign: "center",
+                            fontFamily: "Garamond",
+                            fontWeight: 400,
+                          }}
+                        >
+                          <Box component="span">{event.startTime}</Box>
+                          <Box component="span">~</Box>
+                          <Box component="span">{event.endTime}</Box>
+                        </Box>
+                      </>
+                    )}
                     {/*** location  ***/}
-                    {event.location && (
+                    {event.location_1 && (
                       <>
                         <Box
                           pt={1}
@@ -253,16 +263,16 @@ export default function EventKindD({ event_kind4 }) {
                           <Box
                             component="span"
                             dangerouslySetInnerHTML={{
-                              __html: event.location[0],
+                              __html: event.location_1,
                             }}
                           />
-                          {event.location[1] && (
+                          {event.location_2 && (
                             <>
                               <Box component="span">及</Box>
                               <Box
                                 component="span"
                                 dangerouslySetInnerHTML={{
-                                  __html: event.location[1],
+                                  __html: event.location_2,
                                 }}
                               />
                             </>

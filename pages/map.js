@@ -1,43 +1,41 @@
 //import * as React from "react";
 import React, { useRef, useState, useEffect } from "react";
+
 import { scrollIntoView } from "seamless-scroll-polyfill";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Modal from "@mui/material/Modal";
 
 import dynamic from "next/dynamic";
 import fetchData from "../lib/api";
+
+import Nav from "../components/nav";
 import BrandKindA from "../components/BrandKindA";
 import BrandKindB from "../components/BrandKindB";
 import BrandKindC from "../components/BrandKindC";
 import EventKindA from "../components/EventKindA";
 import EventKindD from "../components/EventKindD";
-import Link from "next/link";
+import SpotModal from "../components/spotModal";
 
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 
-import logo from "../public/imgs/logo.png";
-import Nav from "../components/nav";
-
-import { useRouter } from "next/router";
-import { AnimatePresence, motion } from "framer-motion";
-
-import Modal from "@mui/material/Modal";
-
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import Slider from "react-slick";
 
+import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from "next/image";
+import logo from "../public/imgs/logo.png";
 import roadName1 from "../public/imgs/map/roadName1.png";
 import roadName2 from "../public/imgs/map/roadName2.png";
 import cloud from "../public/imgs/map/cloud.png";
 import e1_1 from "../public/imgs/map/elements/1-1.png";
-import e2_1 from "../public/imgs/map/elements/2-1.png";
+import e2_1 from "../public/imgs/map/elements/2-1n.png";
 import e3_4 from "../public/imgs/map/elements/3-4.png";
 import e4_2 from "../public/imgs/map/elements/4-2.png";
 import e3_6_1 from "../public/imgs/map/elements/3-6-1.png";
@@ -60,13 +58,14 @@ import e3_15 from "../public/imgs/map/elements/3-15.png";
 import e2_5 from "../public/imgs/map/elements/2-5.png";
 import e1_14_b from "../public/imgs/map/elements/1-14_b.png";
 import e3_17 from "../public/imgs/map/elements/3-17.png";
-import e3_18 from "../public/imgs/map/elements/3-18.png";
+import e3_18_1 from "../public/imgs/map/elements/3-18-1.png";
+import e3_18_2 from "../public/imgs/map/elements/3-18-2.png";
 import e2_7 from "../public/imgs/map/elements/2-7.png";
 import e2_8 from "../public/imgs/map/elements/2-8.png";
 import e3_16 from "../public/imgs/map/elements/3-16.png";
 import e1_5 from "../public/imgs/map/elements/1-5.png";
 import e1_2_1 from "../public/imgs/map/elements/1-2-1.png";
-import spot_img from "../public/imgs/spot.png";
+//import spot_img from "../public/imgs/spot.png";
 
 /*****************/
 /*** map stack ***/
@@ -145,30 +144,6 @@ function a11yProps(index) {
 /*************/
 /*** delay ***/
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-/*********************/
-/*** modal setting ***/
-const style = {
-  position: "absolute",
-  //top: "50%",
-  //left: "50%",
-  //transform: "translate(-50%, -50%)",
-  width: "100vw",
-  height: "100vh",
-  bgcolor: "#666",
-  //border: "2px solid #000",
-  //boxShadow: 24,
-  //p: 0,
-  // marginRight: "auto",
-  // marginLeft: "auto",
-};
-const settings = {
-  arrows: false,
-  dots: true,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 
 /*********************/
 /*** main function ***/
@@ -187,12 +162,6 @@ export default function Map({
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  /*********************/
-  /*** modal state ***/
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   /***********************************************************************/
   /*** use router.query to get value from router.push in nav component ***/
@@ -305,6 +274,17 @@ export default function Map({
       inline: "start",
     });
   };
+  const executeKaID8 = async (event) => {
+    setValue(0);
+    //await delay(200);
+    /*** 興波咖啡 BrandKindA id8 ***/
+    await delay(200);
+    scrollIntoView(document.getElementById("Ka_ID8"), {
+      behavior: "smooth",
+      block: "start",
+      inline: "start",
+    });
+  };
 
   /*** 遇身心 BrandKindB ***/
   const executeKbID1 = async (event) => {
@@ -400,19 +380,6 @@ export default function Map({
     return result;
   });
   //console.log(mySpot[0].image);
-  /*****************************/
-  /*** slider ***/
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider({
-    initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
-    created() {
-      setLoaded(true);
-    },
-  });
 
   return (
     <>
@@ -594,17 +561,9 @@ export default function Map({
                       sx={{
                         position: "relative",
                         height: { xs: 28 * 0.7, md: 28 },
-                        cursor: "pointer",
                       }}
-                      onClick={handleOpen}
                     >
-                      <Image
-                        src={spot_img}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
+                      <SpotModal mySpot={mySpot[7]} />
                     </Box>
                   </Item>
                 </Grid>
@@ -620,13 +579,7 @@ export default function Map({
                         height: { xs: 28 * 0.7, md: 28 },
                       }}
                     >
-                      <Image
-                        src={spot_img}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
+                      <SpotModal mySpot={mySpot[8]} />
                     </Box>
                   </Item>
                 </Grid>
@@ -654,39 +607,33 @@ export default function Map({
                 <Grid item xs={1}>
                   <Item>
                     {/*** spot_10 ***/}
-                    <Box
-                      id="1-4-x"
-                      mr={-8}
-                      mt={{ xs: "-20px", md: "-28px" }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 28 * 0.7, md: 28 },
-                      }}
-                    >
-                      <Image
-                        src={spot_img}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
-                    <Box
-                      id="1-4"
-                      mr={-8}
-                      ml={0}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                      }}
-                    >
-                      <Image
-                        src={e1_4}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
+                    <Box id="1-4">
+                      <Box
+                        mr={-8}
+                        mt={{ xs: "-20px", md: "-28px" }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 28 * 0.7, md: 28 },
+                        }}
+                      >
+                        <SpotModal mySpot={mySpot[9]} />
+                      </Box>
+                      <Box
+                        mr={-8}
+                        ml={0}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                        }}
+                      >
+                        <Image
+                          src={e1_4}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
                     </Box>
                   </Item>
                 </Grid>
@@ -759,7 +706,17 @@ export default function Map({
                 </Grid>
                 <Grid item xs={1}>
                   <Item>
-                    <Box></Box>
+                    {/*** spot_11 ***/}
+                    <Box
+                      mr={0}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[10]} />
+                    </Box>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -806,23 +763,35 @@ export default function Map({
                 <Grid item xs={2}>
                   {/*** 2F 香椿露臺 ***/}
                   <Item>
-                    <Box
-                      id="1-12"
-                      mr={{ xs: -2, md: -3 }}
-                      ml={{ xs: -2.5, md: -2 }}
-                      mt={-2}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 150 * 0.7, md: 150 },
-                      }}
-                    >
-                      <Image
-                        src={e1_12}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
+                    {/*** spot_12 ***/}
+                    <Box id="1-12">
+                      <Box
+                        mr={0}
+                        mt={{ xs: "-20px", md: "-28px" }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 28 * 0.7, md: 28 },
+                        }}
+                      >
+                        <SpotModal mySpot={mySpot[11]} />
+                      </Box>
+                      <Box
+                        mr={{ xs: -2, md: -3 }}
+                        ml={{ xs: -2.5, md: -2 }}
+                        mt={-2}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 150 * 0.7, md: 150 },
+                        }}
+                      >
+                        <Image
+                          src={e1_12}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
                     </Box>
                   </Item>
                 </Grid>
@@ -891,6 +860,36 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
+                <Grid item xs={2}>
+                  <Item>
+                    {/*** spot_13 ***/}
+                    <Box
+                      mr={-8}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[12]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={7}>
+                  <Item>
+                    {/*** spot_14 ***/}
+                    <Box
+                      mr={-8}
+                      mt={{ xs: "-20px", md: "-28px" }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[13]} />
+                    </Box>
+                  </Item>
+                </Grid>
               </Grid>
               {/*** grid 2 row ***/}
               <Grid
@@ -923,7 +922,22 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
-                <Grid item xs={14}>
+                <Grid item xs={1}>
+                  <Item>
+                    {/*** spot_7 ***/}
+                    <Box
+                      mr={0}
+                      mt={8}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[6]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={13}>
                   <Item>
                     <Box></Box>
                   </Item>
@@ -1008,6 +1022,7 @@ export default function Map({
                     <Box
                       id="2-7"
                       mt={"-50px"}
+                      //ml={-3}
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
@@ -1335,13 +1350,15 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={2}>
                   {/*** 興波咖啡 BrandKindA id7 ***/}
                   <Item>
                     <Box
                       onClick={executeKaID7}
-                      id="3-18"
+                      id="3-18-1"
                       mt={3}
+                      ml={{ xs: -5, md: -4.2 }}
+                      mr={{ xs: -4.2, md: -4.2 }}
                       sx={{
                         position: "relative",
                         height: { xs: 100 * 0.7, md: 100 },
@@ -1349,7 +1366,33 @@ export default function Map({
                       }}
                     >
                       <Image
-                        src={e3_18}
+                        src={e3_18_2}
+                        alt="element"
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="center"
+                      />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={2}>
+                  {/*** 興波咖啡 BrandKindA id8 ***/}
+                  <Item>
+                    <Box
+                      onClick={executeKaID8}
+                      id="3-18-2"
+                      mt={3}
+                      ml={{ xs: -5, md: -4.2 }}
+                      mr={{ xs: -1, md: 0 }}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 100 * 0.7, md: 100 },
+                        cursor: "pointer",
+                        zIndex: 2,
+                      }}
+                    >
+                      <Image
+                        src={e3_18_1}
                         alt="element"
                         layout="fill"
                         objectFit="contain"
@@ -1386,11 +1429,23 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1}>
                   <Item>
-                    <Box></Box>
+                    {/*** spot_6 ***/}
+                    <Box
+                      mr={0}
+                      mt={8}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[5]} />
+                    </Box>
                   </Item>
                 </Grid>
+                <Grid item xs={3}></Grid>
                 <Grid item xs={1}>
                   {/*** CiPU BrandKindC id2 ***/}
                   <Item>
@@ -1440,29 +1495,100 @@ export default function Map({
                     </Box>
                   </Item>
                 </Grid>
-                <Grid item xs={18}>
-                  <Item>
-                    <Box></Box>
-                  </Item>
-                </Grid>
                 <Grid item xs={1}>
                   <Item>
+                    {/*** spot_5 ***/}
                     <Box
-                      id="4-6"
-                      ml={{ xs: -4, md: -9 }}
-                      mr={{ xs: 1.8, md: 2 }}
+                      mr={0}
+                      mt={8}
                       sx={{
                         position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
+                        height: { xs: 28 * 0.7, md: 28 },
                       }}
                     >
-                      <Image
-                        src={e1_9}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
+                      <SpotModal mySpot={mySpot[4]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={1}>
+                  <Item>
+                    {/*** spot_4 ***/}
+                    <Box
+                      mr={0}
+                      mt={8}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[3]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={5}></Grid>
+                <Grid item xs={1}>
+                  <Item>
+                    {/*** spot_3 ***/}
+                    <Box
+                      mr={0}
+                      mt={8}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[2]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={4}></Grid>
+                <Grid item xs={1}>
+                  <Item>
+                    {/*** spot_2 ***/}
+                    <Box
+                      mr={0}
+                      mt={8}
+                      sx={{
+                        position: "relative",
+                        height: { xs: 28 * 0.7, md: 28 },
+                      }}
+                    >
+                      <SpotModal mySpot={mySpot[1]} />
+                    </Box>
+                  </Item>
+                </Grid>
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1}>
+                  <Item>
+                    <Box id="4-6">
+                      <Box
+                        ml={{ xs: -4, md: -9 }}
+                        mr={{ xs: 1.8, md: 2 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                        }}
+                      >
+                        <Image
+                          src={e1_9}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                      {/*** spot_1 ***/}
+                      <Box
+                        mr={0}
+                        t={{ xs: "-20px", md: "-28px" }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 28 * 0.7, md: 28 },
+                        }}
+                      >
+                        <SpotModal mySpot={mySpot[0]} />
+                      </Box>
                     </Box>
                   </Item>
                 </Grid>
@@ -1530,8 +1656,8 @@ export default function Map({
                 centered
               >
                 <StyledTab label="享時光" {...a11yProps(0)} />
-                <StyledTab label="遇身心" {...a11yProps(1)} />
-                <StyledTab label="蒔生活" {...a11yProps(2)} />
+                <StyledTab label="蒔生活" {...a11yProps(1)} />
+                <StyledTab label="遇身心" {...a11yProps(2)} />
                 <StyledTab label="市集/展覽" {...a11yProps(3)} />
                 <StyledTab label="講座/課程" {...a11yProps(4)} />
               </StyledTabs>
@@ -1554,60 +1680,6 @@ export default function Map({
             </TabPanel>
           </Box>
         </Box>
-
-        {/************/}
-        {/*** modal ***/}
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Box
-              onClick={handleClose}
-              sx={{
-                position: "absolute",
-                right: 0,
-                top: 0,
-                width: 80,
-                height: 80,
-                backgroundColor: "#fff",
-                textAlign: "center",
-                lineHeight: "70px",
-                cursor: "pointer",
-                zIndex: 99,
-              }}
-            >
-              close
-            </Box>
-            <Slider {...settings}>
-              {mySpot[0].image &&
-                mySpot[0].image.map((img, i) => (
-                  <Box key={i}>
-                    <Box
-                      mt={"10vh"}
-                      sx={{
-                        position: "relative",
-                        width: "80vw",
-                        height: "80vh",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
-                    >
-                      <Image
-                        src={`${process.env.DIRECTUS_URL}/assets/${img}`}
-                        alt="bg"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
-                  </Box>
-                ))}
-            </Slider>
-          </Box>
-        </Modal>
       </Box>
     </>
   );
@@ -1627,7 +1699,7 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"1"}}){
+        brand(filter:{kind:{_eq:"享時光"}}){
             id
             name
             introduction
@@ -1650,7 +1722,7 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"2"}}){
+        brand(filter:{kind:{_eq:"蒔生活"}}){
             id
             name
             introduction
@@ -1673,7 +1745,7 @@ export async function getServerSideProps() {
     await fetchData(
       `
       query {
-        brand(filter:{kind:{_eq:"3"}}){
+        brand(filter:{kind:{_eq:"遇身心"}}){
             id
             name
             introduction
@@ -1713,8 +1785,8 @@ export async function getServerSideProps() {
         event (
           filter:{
             status:{_eq:"published"},
-            kind:{_eq:"1"} ,
-            # location:{_eq:"1"} ,
+            kind:{_eq:"市集"} ,
+            location_1:{_eq:"綠沐廣場"} ,
             # startDate: {_between:[ "2022-08-01", "2022-08-10"]},
             # startDate: {_between:[ "$NOW(-1 days)", "$NOW(+1 days)"]},
           },
@@ -1730,7 +1802,8 @@ export async function getServerSideProps() {
             }
             main_content
             sub_content
-            location
+            location_1
+            location_2
             status 
             startDate
             endDate
@@ -1750,7 +1823,7 @@ export async function getServerSideProps() {
         event (
           filter:{
             status:{_eq:"published"},
-            kind:{_eq:"4"} ,
+            kind:{_eq:"課程"} ,
             # location:{_eq:"1"} ,
             # startDate: {_between:[ "2022-08-01", "2022-08-10"]},
             # startDate: {_between:[ "$NOW(-1 days)", "$NOW(+1 days)"]},
@@ -1767,7 +1840,8 @@ export async function getServerSideProps() {
             }
             main_content
             sub_content
-            location
+            location_1
+            location_2
             status 
             startDate
             endDate

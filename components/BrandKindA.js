@@ -48,6 +48,7 @@ export default function BrandKindA({ brand_kind1 }) {
   const BK1ref5 = useRef(null);
   const BK1ref6 = useRef(null);
   const BK1ref7 = useRef(null);
+  const BK1ref8 = useRef(null);
   const BK1isInView1 = useInView(BK1ref1);
   const BK1isInView2 = useInView(BK1ref2);
   const BK1isInView3 = useInView(BK1ref3);
@@ -55,6 +56,7 @@ export default function BrandKindA({ brand_kind1 }) {
   const BK1isInView5 = useInView(BK1ref5);
   const BK1isInView6 = useInView(BK1ref6);
   const BK1isInView7 = useInView(BK1ref7);
+  const BK1isInView8 = useInView(BK1ref8);
   useEffect(() => {
     // const getInvew = async () => {
     if (BK1isInView1 == true) {
@@ -136,7 +138,19 @@ export default function BrandKindA({ brand_kind1 }) {
       //   inline: "start",
       // });
       console.log("BK1isInView7 invew");
-      scrollIntoView(document.getElementById("3-18"), {
+      scrollIntoView(document.getElementById("3-18-1"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } else if (BK1isInView8 == true) {
+      // scrollIntoView(document.getElementById("Ka_ID7"), {
+      //   behavior: "smooth",
+      //   block: "start",
+      //   inline: "start",
+      // });
+      console.log("BK1isInView8 invew");
+      scrollIntoView(document.getElementById("3-18-2"), {
         behavior: "smooth",
         block: "start",
         inline: "start",
@@ -152,6 +166,7 @@ export default function BrandKindA({ brand_kind1 }) {
     BK1isInView5,
     BK1isInView6,
     BK1isInView7,
+    BK1isInView8,
   ]);
 
   return (
@@ -186,7 +201,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -213,7 +228,7 @@ export default function BrandKindA({ brand_kind1 }) {
                     position: "relative",
                     width: "100%",
                     height: { xs: "30vh", md: "50vh" },
-                    borderRadius: "200px",
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -238,7 +253,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -297,7 +312,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -323,8 +338,8 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -348,7 +363,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -407,7 +422,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -433,8 +448,8 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -458,7 +473,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -517,7 +532,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -543,8 +558,8 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -568,7 +583,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -627,7 +642,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -653,8 +668,8 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -678,7 +693,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -737,7 +752,7 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -763,8 +778,8 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -788,7 +803,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -833,7 +848,7 @@ export default function BrandKindA({ brand_kind1 }) {
           </Stack>
         </Box>
         {/*****************/}
-        {/*** 7th brand 興波咖啡 ***/}
+        {/*** 7th brand 興波咖啡 TC1***/}
         <Box
           sx={{
             color: "#000",
@@ -847,7 +862,117 @@ export default function BrandKindA({ brand_kind1 }) {
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].brandName,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[7].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                  ref={BK1ref7}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[7].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "80px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 8th brand 興波咖啡 超級棧 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          id="Ka_ID8"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -873,13 +998,13 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref7}
+                  ref={BK1ref8}
                 >
                   <Image
                     className="brandCover"
@@ -898,7 +1023,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}

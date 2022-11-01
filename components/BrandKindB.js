@@ -112,10 +112,11 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID1"
+          ref={BK2ref1}
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -141,12 +142,11 @@ export default function BrandKindB({ brand_kind2 }) {
                     position: "relative",
                     width: "100%",
                     height: { xs: "30vh", md: "50vh" },
-                    borderRadius: "200px",
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK2ref1}
                 >
                   <Image
                     className="brandCover"
@@ -165,7 +165,7 @@ export default function BrandKindB({ brand_kind2 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
@@ -224,10 +224,11 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID3"
+          ref={BK2ref3}
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
-            spacing={{ xs: 1, md: 3 }}
+            spacing={{ xs: 1, md: 5 }}
             mt={{ xs: 2, md: -2 }}
             ml={0}
             mr={0}
@@ -253,13 +254,12 @@ export default function BrandKindB({ brand_kind2 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: "50vh",
-                    borderRadius: "200px",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
                   }}
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK2ref3}
                 >
                   <Image
                     className="brandCover"
@@ -278,7 +278,7 @@ export default function BrandKindB({ brand_kind2 }) {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: "69px", md: "69px" },
+                    height: { xs: "69px", md: "80px" },
                   }}
                   ml={"auto"}
                   mr={"auto"}
