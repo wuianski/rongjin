@@ -96,6 +96,13 @@ p{
   line-height: 1 !important;
   margin:0;
 }
+/*** force change the font size which is define in CMS ***/
+.eventTitle p:first-child span{
+  font-size: 17px !important; 
+}
+.eventTitle p:last-child span{
+  font-size: 43px !important; 
+}
 @media only screen and (max-width: 900px) {
   .newsTitle p{
     line-height: 1 !important;
@@ -105,4 +112,26 @@ p{
     line-height: 1 !important;
     margin:0;
   }
+  /*** force change the font size which is define in CMS ***/
+  .eventTitle p:first-child span{
+    font-size: 20px !important; 
+  }
+  .eventTitle p:last-child span{
+    font-size: 43px !important; 
+  }
+}
+.myBrandName p {
+  line-height: 1 !important;
+}
+
+.ch{
+  line-height: 160%;
+  text-align: justify;
+  letter-spacing: 0.025em;
+}
+
+.en{
+  line-height: 160%;
+  text-align: center;
+  letter-spacing: 0.025em;
 }

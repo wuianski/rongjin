@@ -49,22 +49,22 @@ export default function BrandKindA({ brand_kind1 }) {
   const BK1ref6 = useRef(null);
   const BK1ref7 = useRef(null);
   const BK1ref8 = useRef(null);
-  const BK1isInView1 = useInView(BK1ref1);
-  const BK1isInView2 = useInView(BK1ref2);
-  const BK1isInView3 = useInView(BK1ref3);
-  const BK1isInView4 = useInView(BK1ref4);
-  const BK1isInView5 = useInView(BK1ref5);
-  const BK1isInView6 = useInView(BK1ref6);
-  const BK1isInView7 = useInView(BK1ref7);
-  const BK1isInView8 = useInView(BK1ref8);
+  const BK1isInView1 = useInView(BK1ref1, { amount: 1 });
+  const BK1isInView2 = useInView(BK1ref2, { amount: 1 });
+  const BK1isInView3 = useInView(BK1ref3, { amount: 1 });
+  const BK1isInView4 = useInView(BK1ref4, { amount: 1 });
+  const BK1isInView5 = useInView(BK1ref5, { amount: 1 });
+  const BK1isInView6 = useInView(BK1ref6, { amount: 1 });
+  const BK1isInView7 = useInView(BK1ref7, { amount: 1 });
+  const BK1isInView8 = useInView(BK1ref8, { amount: 1 });
   useEffect(() => {
     // const getInvew = async () => {
     if (BK1isInView1 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID1"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID1"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView1 invew");
       scrollIntoView(document.getElementById("3-4"), {
         behavior: "smooth",
@@ -72,11 +72,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView2 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID2"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID2"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView2 invew");
       scrollIntoView(document.getElementById("3-6-1"), {
         behavior: "smooth",
@@ -84,11 +84,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView3 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID3"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID3"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView3 invew");
       scrollIntoView(document.getElementById("3-9"), {
         behavior: "smooth",
@@ -96,11 +96,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView4 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID4"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID4"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView4 invew");
       scrollIntoView(document.getElementById("3-11"), {
         behavior: "smooth",
@@ -108,11 +108,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView5 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID5"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID5"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView5 invew");
       scrollIntoView(document.getElementById("3-13"), {
         behavior: "smooth",
@@ -120,11 +120,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView6 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID6"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID6"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView6 invew");
       scrollIntoView(document.getElementById("3-17"), {
         behavior: "smooth",
@@ -132,11 +132,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView7 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID7"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID7"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView7 invew");
       scrollIntoView(document.getElementById("3-18-1"), {
         behavior: "smooth",
@@ -144,11 +144,11 @@ export default function BrandKindA({ brand_kind1 }) {
         inline: "start",
       });
     } else if (BK1isInView8 == true) {
-      // scrollIntoView(document.getElementById("Ka_ID7"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Ka_ID8"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK1isInView8 invew");
       scrollIntoView(document.getElementById("3-18-2"), {
         behavior: "smooth",
@@ -219,6 +219,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[0].brandName,
                 }}
+                ref={BK1ref1}
               ></Box>
             </Item>
             <Item>
@@ -233,7 +234,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref1}
                 >
                   <Image
                     //loader={myLoader}
@@ -330,6 +330,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[1].brandName,
                 }}
+                ref={BK1ref2}
               ></Box>
             </Item>
             <Item>
@@ -344,7 +345,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref2}
                 >
                   <Image
                     className="brandCover"
@@ -440,6 +440,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[2].brandName,
                 }}
+                ref={BK1ref3}
               ></Box>
             </Item>
             <Item>
@@ -454,7 +455,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref3}
                 >
                   <Image
                     className="brandCover"
@@ -550,6 +550,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[3].brandName,
                 }}
+                ref={BK1ref4}
               ></Box>
             </Item>
             <Item>
@@ -564,7 +565,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref4}
                 >
                   <Image
                     className="brandCover"
@@ -660,6 +660,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[4].brandName,
                 }}
+                ref={BK1ref5}
               ></Box>
             </Item>
             <Item>
@@ -674,7 +675,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref5}
                 >
                   <Image
                     className="brandCover"
@@ -770,6 +770,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[5].brandName,
                 }}
+                ref={BK1ref6}
               ></Box>
             </Item>
             <Item>
@@ -784,7 +785,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref6}
                 >
                   <Image
                     className="brandCover"
@@ -869,10 +869,11 @@ export default function BrandKindA({ brand_kind1 }) {
           >
             <Item>
               <Box
+                className="myBrandName"
                 sx={{
                   textAlign: "center",
                   fontSize: "43px",
-                  lineHeight: "43px",
+                  lineHeight: 1,
                   fontFamily: "GenWanMin TW",
                   fontWeight: 600,
                   borderTop: "1px solid #000",
@@ -880,6 +881,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[7].brandName,
                 }}
+                ref={BK1ref7}
               ></Box>
             </Item>
             <Item>
@@ -894,7 +896,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref7}
                 >
                   <Image
                     className="brandCover"
@@ -990,6 +991,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand1[6].brandName,
                 }}
+                ref={BK1ref8}
               ></Box>
             </Item>
             <Item>
@@ -1004,7 +1006,6 @@ export default function BrandKindA({ brand_kind1 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK1ref8}
                 >
                   <Image
                     className="brandCover"

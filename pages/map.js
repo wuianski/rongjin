@@ -112,6 +112,15 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
     color: "rgba(0, 0, 0, 0.5)",
     "&.Mui-selected": { color: "#000 " },
     "&.Mui-focusVisible": { backgroundColor: "#000" },
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: 14,
+      marginRight: theme.spacing(0),
+      minHeight: 24,
+      //maxWidth: 100,
+      minWidth: "auto",
+      padding: "18px 6px 0px 6px",
+    },
   })
 );
 function TabPanel(props) {
@@ -199,88 +208,80 @@ export default function Map({
   /*** 享時光 BrandKindA ***/
   const executeKaID1 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 九州鬆餅 BrandKindA id1 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID1"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID2 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 金錦町 BrandKindA id2 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID2"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID3 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** JeeWoo 吉屋 BrandKindA id3 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID3"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID4 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 臺虎居餃屋 BrandKindA id4 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID4"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID5 = async (event) => {
     setValue(0);
-    // delay(200);
     /*** 日日禾日 BrandKindA id5 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID5"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID6 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 老優雅 BrandKindA id6 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID6"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID7 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 興波咖啡 BrandKindA id7 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID7"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKaID8 = async (event) => {
     setValue(0);
-    //await delay(200);
     /*** 興波咖啡 BrandKindA id8 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Ka_ID8"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
@@ -288,27 +289,31 @@ export default function Map({
 
   /*** 遇身心 BrandKindB ***/
   const executeKbID1 = async (event) => {
-    //console.log("click executeTab");
     setValue(1);
-    //await delay(200);
-    //console.log("click");
     /*** 寵物點子 BrandKindB id1 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Kb_ID1"), {
-      behavior: "smooth",
+      behavior: "auto",
+      block: "start",
+      inline: "start",
+    });
+  };
+  const executeKbID2 = async (event) => {
+    setValue(1);
+    /*** CiPU BrandKindB id2 ***/
+    await delay(1000);
+    scrollIntoView(document.getElementById("Kb_ID2"), {
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKbID3 = async (event) => {
-    //console.log("click executeTab");
     setValue(1);
-    // await delay(200);
-    //console.log("click");
     /*** Mon Bonbon BrandKindB id3 ***/
-    await delay(200);
+    await delay(1000);
     scrollIntoView(document.getElementById("Kb_ID3"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
@@ -316,13 +321,11 @@ export default function Map({
 
   /*** 蒔生活 BrandKindC ***/
   const executeKcID1 = async (event) => {
-    //console.log("click executeTab");
     setValue(2);
-    await delay(200);
-    //console.log("click");
+    await delay(1000);
     /*** 吉品養生 BrandKindC id1 ***/
     scrollIntoView(document.getElementById("Kc_ID1"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
@@ -330,35 +333,31 @@ export default function Map({
   const executeKcID2 = async (event) => {
     //console.log("click executeTab");
     setValue(2);
-    await delay(200);
+    await delay(1000);
     //console.log("click");
     /*** 花筏亭 BrandKindC id2 ***/
     scrollIntoView(document.getElementById("Kc_ID2"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKcID3 = async (event) => {
-    //console.log("click executeTab");
     setValue(2);
-    await delay(200);
-    //console.log("click");
+    await delay(1000);
     /*** 京町　山本屋 BrandKindC id3 ***/
     scrollIntoView(document.getElementById("Kc_ID3"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
   };
   const executeKcID4 = async (event) => {
-    //console.log("click executeTab");
     setValue(2);
-    await delay(200);
-    //console.log("click");
+    await delay(1000);
     /*** 好丘 BrandKindC id4 ***/
     scrollIntoView(document.getElementById("Kc_ID4"), {
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
       inline: "start",
     });
@@ -1450,6 +1449,7 @@ export default function Map({
                   {/*** CiPU BrandKindC id2 ***/}
                   <Item>
                     <Box
+                      onClick={executeKbID2}
                       id="4-4-1"
                       mt={"-30px"}
                       ml={-2}

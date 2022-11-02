@@ -171,7 +171,7 @@ export default function EventKindA({ event_kind1 }) {
                           sx={{
                             textAlign: "center",
                             fontSize: "43px",
-                            lineHeight: "43px",
+                            lineHeight: 1,
                             fontFamily: "GenWanMin TW",
                             fontWeight: 600,
                             borderTop: "1px solid #000",

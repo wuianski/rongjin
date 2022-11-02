@@ -100,7 +100,7 @@ export default function About({ about, aboutState }) {
   /*** link to other page ***/
   const router = useRouter();
   const executeGoMapA = (event) => {
-    console.log("click executeGoTab1");
+    //console.log("click executeGoTab1");
     //setOpen(false);
     router.push({ pathname: "/map" });
   };
@@ -124,7 +124,7 @@ export default function About({ about, aboutState }) {
         sx={{
           position: "absolute",
           right: { xs: 24, md: "130px" },
-          bottom: { xs: 32, md: "30vh" },
+          bottom: { xs: 32, md: "35vh" },
           zIndex: 3,
         }}
       >
@@ -187,7 +187,7 @@ export default function About({ about, aboutState }) {
             position: "absolute",
             left: { xs: "unset", md: 141 },
             right: { xs: 24, md: "unset" },
-            bottom: { xs: "unset", md: 32 },
+            bottom: { xs: "unset", md: 2 },
             top: { xs: "60vh", md: "unset" },
             zIndex: 2,
           }}
@@ -217,8 +217,8 @@ export default function About({ about, aboutState }) {
           sx={{
             position: "absolute",
             left: { xs: "unset", md: 623 },
-            right: { xs: 20, md: "unset" },
-            top: { xs: "38vh", md: 32 },
+            right: { xs: 0, md: "unset" },
+            top: { xs: "32vh", md: 32 },
             zIndex: 2,
           }}
         >

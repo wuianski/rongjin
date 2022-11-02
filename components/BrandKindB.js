@@ -40,16 +40,16 @@ export default function BrandKindB({ brand_kind2 }) {
   const BK2ref1 = useRef(null);
   const BK2ref2 = useRef(null);
   const BK2ref3 = useRef(null);
-  const BK2isInView1 = useInView(BK2ref1);
-  const BK2isInView2 = useInView(BK2ref2);
-  const BK2isInView3 = useInView(BK2ref3);
+  const BK2isInView1 = useInView(BK2ref1, { amount: 1 });
+  const BK2isInView2 = useInView(BK2ref2, { amount: 1 });
+  const BK2isInView3 = useInView(BK2ref3, { amount: 1 });
   useEffect(() => {
     if (BK2isInView1 == true) {
-      // scrollIntoView(document.getElementById("Kb_ID1"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Kb_ID1"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK2isInView1 invew");
       scrollIntoView(document.getElementById("1-7"), {
         behavior: "smooth",
@@ -57,23 +57,23 @@ export default function BrandKindB({ brand_kind2 }) {
         inline: "start",
       });
     } else if (BK2isInView2 == true) {
-      // scrollIntoView(document.getElementById("Kb_ID2"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Kb_ID2"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK2isInView2 invew");
-      scrollIntoView(document.getElementById("rightest"), {
+      scrollIntoView(document.getElementById("4-4-1"), {
         behavior: "smooth",
         block: "start",
         inline: "start",
       });
     } else if (BK2isInView3 == true) {
-      // scrollIntoView(document.getElementById("Kb_ID3"), {
-      //   behavior: "smooth",
-      //   block: "start",
-      //   inline: "start",
-      // });
+      scrollIntoView(document.getElementById("Kb_ID3"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
       console.log("BK2isInView3 invew");
       scrollIntoView(document.getElementById("4-4-2"), {
         behavior: "smooth",
@@ -112,7 +112,6 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID1"
-          ref={BK2ref1}
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -133,6 +132,7 @@ export default function BrandKindB({ brand_kind2 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand2[0].brandName,
                 }}
+                ref={BK2ref1}
               ></Box>
             </Item>
             <Item>
@@ -211,6 +211,114 @@ export default function BrandKindB({ brand_kind2 }) {
         </Box>
 
         {/*** 2nd brand CiPU ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pb={1}
+          id="Kb_ID2"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 5 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand2[2].brandName,
+                }}
+                ref={BK2ref2}
+              ></Box>
+            </Item>
+            <Item>
+              {brand2[2].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand2[2].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand2[2].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "80px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand2[2].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand2[2].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand2[2].contactUs,
+                }}
+              ></Box>
+            </Item>
+          </Stack>
+        </Box>
 
         {/*****************/}
         {/*** 3rd brand Mon Bonbon ***/}
@@ -224,7 +332,6 @@ export default function BrandKindB({ brand_kind2 }) {
           pt={{ xs: 0, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID3"
-          ref={BK2ref3}
         >
           <Stack
             direction={{ xs: "column", md: "column" }}
@@ -246,6 +353,7 @@ export default function BrandKindB({ brand_kind2 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand2[1].brandName,
                 }}
+                ref={BK2ref3}
               ></Box>
             </Item>
             <Item>

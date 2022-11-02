@@ -2,6 +2,9 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
+import en_btn from "../public/imgs/en_btn.png";
+import ch_btn from "../public/imgs/ch_btn.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -29,9 +32,92 @@ const ItemSub = styled(Paper)(({ theme }) => ({
   },
 }));
 
+/*************/
+/*** delay ***/
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export default function AboutContent({ about }) {
+  /*** changeToEN ***/
+  const changeToEN = async (event) => {
+    const nodeList_ch = document.querySelectorAll(".ch");
+    for (let i = 0; i < nodeList_ch.length; i++) {
+      nodeList_ch[i].style.display = "none";
+    }
+    const nodeList_en = document.querySelectorAll(".en");
+    for (let i = 0; i < nodeList_en.length; i++) {
+      nodeList_en[i].style.display = "block";
+    }
+  };
+  /*** changeToCH ***/
+  const changeToCH = async (event) => {
+    const nodeList_ch = document.querySelectorAll(".ch");
+    for (let i = 0; i < nodeList_ch.length; i++) {
+      nodeList_ch[i].style.display = "block";
+    }
+    const nodeList_en = document.querySelectorAll(".en");
+    for (let i = 0; i < nodeList_en.length; i++) {
+      nodeList_en[i].style.display = "none";
+    }
+  };
+
   return (
     <>
+      {/*** EN btn  ***/}
+      <Box
+        pb={3}
+        pt={3}
+        sx={{
+          position: "absolute",
+          left: { xs: "8px", md: "34px" },
+          top: { xs: "100px", md: "188px" },
+          zIndex: 2,
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: "calc(154px * 0.8)", md: "154px" },
+            height: { xs: "calc(70px * 0.8)", md: "70px" },
+            cursor: "pointer",
+          }}
+          onClick={changeToEN}
+        >
+          <Image
+            src={en_btn}
+            alt="return icon"
+            layout="intrinsic"
+            objectFit="cover"
+          />
+        </Box>
+      </Box>
+      {/*** CH btn  ***/}
+      <Box
+        pb={3}
+        pt={3}
+        sx={{
+          position: "absolute",
+          left: { xs: "8px", md: "34px" },
+          top: { xs: "158px", md: "265px" },
+          zIndex: 2,
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: "calc(154px * 0.8)", md: "154px" },
+            height: { xs: "calc(70px * 0.8)", md: "70px" },
+            cursor: "pointer",
+          }}
+          onClick={changeToCH}
+        >
+          <Image
+            src={ch_btn}
+            alt="return icon"
+            layout="intrinsic"
+            objectFit="cover"
+          />
+        </Box>
+      </Box>
       {/*** about content which can scroll ***/}
       <Box
         sx={{
@@ -55,23 +141,35 @@ export default function AboutContent({ about }) {
                 {/*** 榕錦時光生活園區 ***/}
                 <ItemSub>
                   <Box
+                    className="ch"
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "block",
                     }}
                     dangerouslySetInnerHTML={{
                       __html: about.park_introduction_tw,
                     }}
                   />
+                  <Box
+                    className="en"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.park_introduction_en,
+                    }}
+                  />
                 </ItemSub>
                 {/*** 歷史沿革 ***/}
-                <ItemSub>
+                {/* <ItemSub>
                   <Box
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
                     }}
                     dangerouslySetInnerHTML={{ __html: about.history_tw }}
                   />
-                </ItemSub>
+                </ItemSub> */}
               </Stack>
             </Box>
           </Item>
@@ -81,22 +179,46 @@ export default function AboutContent({ about }) {
                 {/*** 未來展望 ***/}
                 <ItemSub>
                   <Box
+                    className="ch"
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "block",
                     }}
                     dangerouslySetInnerHTML={{
                       __html: about.prospects_tw,
+                    }}
+                  />
+                  <Box
+                    className="en"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.prospects_en,
                     }}
                   />
                 </ItemSub>
                 {/*** 營運團隊 ***/}
                 <ItemSub>
                   <Box
+                    className="ch"
                     sx={{
                       fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "block",
                     }}
                     dangerouslySetInnerHTML={{
                       __html: about.operations_team_tw,
+                    }}
+                  />
+                  <Box
+                    className="en"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.operations_team_en,
                     }}
                   />
                 </ItemSub>

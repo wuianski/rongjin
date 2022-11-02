@@ -79,9 +79,12 @@ export async function getServerSideProps() {
           about{
             id
             park_introduction_tw
+            park_introduction_en
             history_tw
             prospects_tw
+            prospects_en
             operations_team_tw
+            operations_team_en
             transportation_tw
           }
       }
