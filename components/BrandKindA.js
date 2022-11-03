@@ -195,7 +195,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID1"
         >
@@ -306,7 +306,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID2"
         >
@@ -416,7 +416,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID3"
         >
@@ -526,7 +526,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID4"
         >
@@ -636,7 +636,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID5"
         >
@@ -746,7 +746,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID6"
         >
@@ -856,7 +856,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID7"
         >
@@ -967,7 +967,7 @@ export default function BrandKindA({ brand_kind1 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Ka_ID8"
         >

@@ -147,7 +147,7 @@ export default function BrandKindC({ brand_kind3 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kc_ID1"
         >
@@ -171,6 +171,7 @@ export default function BrandKindC({ brand_kind3 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand3[0].brandName,
                 }}
+                ref={BK3ref1}
               ></Box>
             </Item>
             <Item>
@@ -185,7 +186,6 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK3ref1}
                 >
                   <Image
                     //loader={myLoader}
@@ -259,7 +259,7 @@ export default function BrandKindC({ brand_kind3 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kc_ID2"
         >
@@ -284,6 +284,7 @@ export default function BrandKindC({ brand_kind3 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand3[1].brandName,
                 }}
+                ref={BK3ref2}
               ></Box>
             </Item>
             <Item>
@@ -298,7 +299,6 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK3ref2}
                 >
                   <Image
                     className="brandCover"
@@ -371,7 +371,7 @@ export default function BrandKindC({ brand_kind3 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kc_ID3"
         >
@@ -396,6 +396,7 @@ export default function BrandKindC({ brand_kind3 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand3[2].brandName,
                 }}
+                ref={BK3ref3}
               ></Box>
             </Item>
             <Item>
@@ -410,7 +411,6 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK3ref3}
                 >
                   <Image
                     className="brandCover"
@@ -484,7 +484,7 @@ export default function BrandKindC({ brand_kind3 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kc_ID4"
         >
@@ -509,6 +509,7 @@ export default function BrandKindC({ brand_kind3 }) {
                 dangerouslySetInnerHTML={{
                   __html: brand3[3].brandName,
                 }}
+                ref={BK3ref4}
               ></Box>
             </Item>
             <Item>
@@ -523,7 +524,6 @@ export default function BrandKindC({ brand_kind3 }) {
                   ml={"auto"}
                   mr={"auto"}
                   mt={-3}
-                  ref={BK3ref4}
                 >
                   <Image
                     className="brandCover"

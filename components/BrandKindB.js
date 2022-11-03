@@ -109,7 +109,7 @@ export default function BrandKindB({ brand_kind2 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID1"
         >
@@ -218,7 +218,7 @@ export default function BrandKindB({ brand_kind2 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID2"
         >
@@ -329,7 +329,7 @@ export default function BrandKindB({ brand_kind2 }) {
           }}
           ml={1}
           mr={1}
-          pt={{ xs: 0, md: "calc(120px + 24px)" }}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
           pb={1}
           id="Kb_ID3"
         >

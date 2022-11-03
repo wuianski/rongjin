@@ -797,23 +797,26 @@ export default function Map({
                 <Grid item xs={3}>
                   {/*** 榕錦社區保健室 ***/}
                   <Item>
-                    <Box
-                      id="1-13"
-                      ml={{ xs: -5, md: -5 }}
-                      mt={{ xs: -0.6, md: 0 }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                      }}
-                    >
-                      <Image
-                        src={e1_13}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                    <Link href="/community_health_care">
+                      <Box
+                        id="1-13"
+                        ml={{ xs: -5, md: -5 }}
+                        mt={{ xs: -0.6, md: 0 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e1_13}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </Link>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
@@ -1673,10 +1676,10 @@ export default function Map({
               <BrandKindC brand_kind3={brand_kind_3.brand} />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              <EventKindA event_kind1={event_kind_1.event} />
+              <EventKindA event_kind_1={event_kind_1.event} />
             </TabPanel>
             <TabPanel value={value} index={4}>
-              <EventKindD event_kind4={event_kind_4.event} />
+              <EventKindD event_kind_4={event_kind_4.event} />
             </TabPanel>
           </Box>
         </Box>
@@ -1786,7 +1789,7 @@ export async function getServerSideProps() {
           filter:{
             status:{_eq:"published"},
             kind:{_eq:"市集"} ,
-            location_1:{_eq:"綠沐廣場"} ,
+            # location_1:{_eq:"綠沐廣場"} ,
             # startDate: {_between:[ "2022-08-01", "2022-08-10"]},
             # startDate: {_between:[ "$NOW(-1 days)", "$NOW(+1 days)"]},
           },
