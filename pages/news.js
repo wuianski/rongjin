@@ -149,7 +149,13 @@ export async function getServerSideProps() {
     await fetchData(
       `
         query {
-            news {
+            news (
+              filter:{
+                status:{_eq:"published"},
+              },
+              sort:["sort", "-date"]
+            )
+            {
               id
               title
               date
