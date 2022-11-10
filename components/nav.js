@@ -300,45 +300,45 @@ export default function Nav({ menu }) {
                       pt={1}
                     >
                       <Item>
-                        {/* <a href={menu.youtube} target="_blank"> */}
-                        <Box
-                          sx={{
-                            width: "30px",
-                            height: "30px",
-                          }}
-                        >
-                          <Image
-                            src={yt}
-                            alt="yt icon"
-                            layout="intrinsic"
-                            objectFit="cover"
-                          />
-                        </Box>
-                        {/* </a> */}
+                        <a href={menu.youtube} target="_blank">
+                          <Box
+                            sx={{
+                              width: "30px",
+                              height: "30px",
+                            }}
+                          >
+                            <Image
+                              src={yt}
+                              alt="yt icon"
+                              layout="intrinsic"
+                              objectFit="cover"
+                            />
+                          </Box>
+                        </a>
                       </Item>
                       <Item>
-                        {/* <a href={menu.instagram} target="_blank"> */}
-                        <Box>
-                          <Image
-                            src={ig}
-                            alt="ig icon"
-                            width={30}
-                            height={30}
-                          />
-                        </Box>
-                        {/* </a> */}
+                        <a href={menu.instagram} target="_blank">
+                          <Box>
+                            <Image
+                              src={ig}
+                              alt="ig icon"
+                              width={30}
+                              height={30}
+                            />
+                          </Box>
+                        </a>
                       </Item>
                       <Item>
-                        {/* <a href={menu.facebook} target="_blank"> */}
-                        <Box>
-                          <Image
-                            src={fb}
-                            alt="fb icon"
-                            width={30}
-                            height={30}
-                          />
-                        </Box>
-                        {/* </a> */}
+                        <a href={menu.facebook} target="_blank">
+                          <Box>
+                            <Image
+                              src={fb}
+                              alt="fb icon"
+                              width={30}
+                              height={30}
+                            />
+                          </Box>
+                        </a>
                       </Item>
                     </Stack>
                   </Box>
