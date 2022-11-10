@@ -205,7 +205,7 @@ export default function Map({
   /*********************************************************/
   /*** click on map and switch tab and scroll to element ***/
 
-  /*** 享時光 BrandKindA ***/
+  /*** 享食光 BrandKindA ***/
   const executeKaID1 = async (event) => {
     setValue(0);
     /*** 九州鬆餅 BrandKindA id1 ***/
@@ -1658,7 +1658,7 @@ export default function Map({
                 aria-label="basic tabs example"
                 centered
               >
-                <StyledTab label="享時光" {...a11yProps(0)} />
+                <StyledTab label="享食光" {...a11yProps(0)} />
                 <StyledTab label="蒔生活" {...a11yProps(1)} />
                 <StyledTab label="遇身心" {...a11yProps(2)} />
                 <StyledTab label="市集/展覽" {...a11yProps(3)} />

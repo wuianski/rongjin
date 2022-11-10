@@ -446,7 +446,7 @@ export default function Nav({ menu }) {
                             }}
                             onClick={executeGoMapA}
                           >
-                            享時光
+                            享食光
                           </Box>
                           <Box
                             sx={{
