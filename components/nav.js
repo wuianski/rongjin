@@ -300,7 +300,7 @@ export default function Nav({ menu }) {
                       pt={1}
                     >
                       <Item>
-                        <a href={menu.youtube} target="_blank">
+                        <a href={menu.youtube} target="_blank" rel="noreferrer">
                           <Box
                             sx={{
                               width: "30px",
@@ -317,7 +317,11 @@ export default function Nav({ menu }) {
                         </a>
                       </Item>
                       <Item>
-                        <a href={menu.instagram} target="_blank">
+                        <a
+                          href={menu.instagram}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Box>
                             <Image
                               src={ig}
@@ -329,7 +333,11 @@ export default function Nav({ menu }) {
                         </a>
                       </Item>
                       <Item>
-                        <a href={menu.facebook} target="_blank">
+                        <a
+                          href={menu.facebook}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <Box>
                             <Image
                               src={fb}
