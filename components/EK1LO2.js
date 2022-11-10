@@ -18,12 +18,12 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 /***********************/
 /*** 時光巷弄 Section ***/
-function Section({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 1 });
+function Section2({ children }) {
+  const ref2 = useRef(null);
+  const isInView2 = useInView(ref2, { amount: 1 });
   useEffect(() => {
-    console.log("Element is in view: ", isInView);
-    if (isInView === true) {
+    console.log("Event1 ref2 is in view: ", isInView2);
+    if (isInView2 === true) {
       /*** CHANGE HERE 時光巷弄 id ***/
       scrollIntoView(document.getElementById("1-5"), {
         behavior: "smooth",
@@ -31,10 +31,10 @@ function Section({ children }) {
         inline: "start",
       });
     }
-  }, [isInView]);
+  }, [isInView2]);
 
   return (
-    <section ref={ref}>
+    <section ref={ref2}>
       <span>{children}</span>
     </section>
   );
@@ -64,7 +64,7 @@ export default function EK1LO2({ event }) {
         >
           {/*** title  ***/}
           <Item>
-            <Section>
+            <Section2>
               <Box
                 pt={3}
                 className="eventTitle"
@@ -80,7 +80,7 @@ export default function EK1LO2({ event }) {
                   __html: event.title,
                 }}
               ></Box>
-            </Section>
+            </Section2>
           </Item>
           {/*** cover image  ***/}
           <Item>
@@ -191,18 +191,20 @@ export default function EK1LO2({ event }) {
           </Item>
           {/*** sub_content  ***/}
           <Item>
-            <Box
-              pt={1}
-              sx={{
-                textAlign: "left",
-                fontFamily: "GenYoGothic TW",
-                fontWeight: 400,
-                borderTop: "1px solid #000",
-              }}
-              dangerouslySetInnerHTML={{
-                __html: event.sub_content,
-              }}
-            ></Box>
+            {event.sub_content && (
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: event.sub_content,
+                }}
+              ></Box>
+            )}
           </Item>
         </Stack>
       </Box>

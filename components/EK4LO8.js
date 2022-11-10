@@ -18,12 +18,12 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 /***********************/
 /*** 服務中心 Section ***/
-function Section({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 1 });
+function Section3({ children }) {
+  const ref3 = useRef(null);
+  const isInView3 = useInView(ref3, { amount: 1 });
   useEffect(() => {
-    console.log("Element is in view: ", isInView);
-    if (isInView === true) {
+    console.log("Event4 ref3 is in view: ", isInView3);
+    if (isInView3 === true) {
       /*** CHANGE HERE 服務中心 id ***/
       scrollIntoView(document.getElementById("2-5"), {
         behavior: "smooth",
@@ -31,10 +31,10 @@ function Section({ children }) {
         inline: "start",
       });
     }
-  }, [isInView]);
+  }, [isInView3]);
 
   return (
-    <section ref={ref}>
+    <section ref={ref3}>
       <span>{children}</span>
     </section>
   );
@@ -64,7 +64,7 @@ export default function EK4LO8({ event }) {
         >
           {/*** title  ***/}
           <Item>
-            <Section>
+            <Section3>
               <Box
                 pt={3}
                 className="eventTitle"
@@ -80,7 +80,7 @@ export default function EK4LO8({ event }) {
                   __html: event.title,
                 }}
               ></Box>
-            </Section>
+            </Section3>
           </Item>
           {/*** cover image  ***/}
           <Item>

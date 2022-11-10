@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import { useInView } from "framer-motion";
 
 import EK4LO8 from "./EK4LO8";
+import EK4LO4 from "./EK4LO4";
 
 /******************/
 /*** list stack ***/
@@ -21,7 +22,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function EventKindD({ event_kind_4 }) {
   /*************************************/
-  /*** organize event's data 市集 ***/
+  /*** organize event's data 課程 ***/
   const event4 = event_kind_4.map((e) => {
     const result = {
       id: e.id,
@@ -65,6 +66,11 @@ export default function EventKindD({ event_kind_4 }) {
               {event.location_1 == "服務中心" && (
                 <>
                   <EK4LO8 event={event} />
+                </>
+              )}
+              {event.location_1 == "閱讀客廳" && (
+                <>
+                  <EK4LO4 event={event} />
                 </>
               )}
             </Box>

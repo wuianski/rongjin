@@ -40,7 +40,13 @@ export default function BrandKindB({ brand_kind2 }) {
   const BK2ref1 = useRef(null);
   const BK2ref2 = useRef(null);
   const BK2ref3 = useRef(null);
-  const BK2isInView1 = useInView(BK2ref1, { amount: 1 });
+  const BK2isInView1 = useInView(
+    BK2ref1,
+    { amount: 1 }
+    // {
+    //   margin: "0px 0px",
+    // }
+  );
   const BK2isInView2 = useInView(BK2ref2, { amount: 1 });
   const BK2isInView3 = useInView(BK2ref3, { amount: 1 });
   useEffect(() => {

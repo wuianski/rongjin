@@ -119,6 +119,13 @@ p{
   .eventTitle p:last-child span{
     font-size: 43px !important; 
   }
+  /*** force change the font size which is define in CMS ***/
+  .newsTitle p{
+    font-size: 43px !important; 
+  }
+  .newsTitle p:last-child span{
+    font-size: 43px !important; 
+  }
 }
 .myBrandName p {
   line-height: 1 !important;
@@ -134,4 +141,9 @@ p{
   line-height: 160%;
   text-align: left;
   letter-spacing: 0.025em;
+}
+
+.slick-dots .slick-active div{
+  background-color:#000;
+  color:#fff !important;
 }

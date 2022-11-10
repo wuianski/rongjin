@@ -100,6 +100,9 @@ export async function getServerSideProps() {
             id
             business_hours
             contact_us
+            facebook
+            instagram
+            youtube
           }
       }
       `,

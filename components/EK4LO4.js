@@ -17,30 +17,30 @@ const Item = styled(Paper)(({ theme }) => ({
   boxShadow: "none",
 }));
 /***********************/
-/*** 綠沐廣場 Section ***/
-function Section1({ children }) {
-  const ref1 = useRef(null);
-  const isInView1 = useInView(ref1, { amount: 1 });
+/*** 閱時客廳 Section ***/
+function Section3({ children }) {
+  const ref3 = useRef(null);
+  const isInView3 = useInView(ref3, { amount: 1 });
   useEffect(() => {
-    console.log("Event1 ref1 is in view: ", isInView1);
-    if (isInView1 === true) {
-      /*** CHANGE HERE 綠沐廣場 id ***/
-      scrollIntoView(document.getElementById("1-2-1"), {
+    console.log("Event4 location 閱時客廳 is in view: ", isInView3);
+    if (isInView3 === true) {
+      /*** CHANGE HERE 閱時客廳 id ***/
+      scrollIntoView(document.getElementById("1-14"), {
         behavior: "smooth",
         block: "start",
         inline: "start",
       });
     }
-  }, [isInView1]);
+  }, [isInView3]);
 
   return (
-    <section ref={ref1}>
+    <section ref={ref3}>
       <span>{children}</span>
     </section>
   );
 }
 
-export default function EK1LO1({ event }) {
+export default function EK4LO4({ event }) {
   return (
     <>
       <Box
@@ -64,7 +64,7 @@ export default function EK1LO1({ event }) {
         >
           {/*** title  ***/}
           <Item>
-            <Section1>
+            <Section3>
               <Box
                 pt={3}
                 className="eventTitle"
@@ -80,7 +80,7 @@ export default function EK1LO1({ event }) {
                   __html: event.title,
                 }}
               ></Box>
-            </Section1>
+            </Section3>
           </Item>
           {/*** cover image  ***/}
           <Item>
@@ -190,22 +190,20 @@ export default function EK1LO1({ event }) {
             ></Box>
           </Item>
           {/*** sub_content  ***/}
-          <Item>
-            {event.sub_content && (
-              <Box
-                pt={1}
-                sx={{
-                  textAlign: "left",
-                  fontFamily: "GenYoGothic TW",
-                  fontWeight: 400,
-                  borderTop: "1px solid #000",
-                }}
-                dangerouslySetInnerHTML={{
-                  __html: event.sub_content,
-                }}
-              ></Box>
-            )}
-          </Item>
+          {/* <Item>
+            <Box
+              pt={1}
+              sx={{
+                textAlign: "left",
+                fontFamily: "GenYoGothic TW",
+                fontWeight: 400,
+                borderTop: "1px solid #000",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: event.sub_content,
+              }}
+            ></Box>
+          </Item> */}
         </Stack>
       </Box>
     </>

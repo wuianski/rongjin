@@ -210,7 +210,9 @@ export default function Nav({ menu }) {
               width: "100vw",
               height: "100vh",
               position: "fixed",
-              overflow: "scroll",
+              overflow: { xs: "scroll", md: "hidden" },
+              scrollbarWidth: "none",
+              "&::-webkit-scrollbar": { display: "none" },
               top: 0,
               left: 0,
               zIndex: { xs: 99, md: 0 },
@@ -270,6 +272,7 @@ export default function Nav({ menu }) {
                 position: "absolute",
                 left: { xs: 30, md: 30 },
                 top: { xs: 100, md: "45vh" },
+                width: { xs: "calc(100vw - 60px)", md: "auto" },
               }}
             >
               <Stack
@@ -297,6 +300,7 @@ export default function Nav({ menu }) {
                       pt={1}
                     >
                       <Item>
+                        {/* <a href={menu.youtube} target="_blank"> */}
                         <Box
                           sx={{
                             width: "30px",
@@ -310,8 +314,10 @@ export default function Nav({ menu }) {
                             objectFit="cover"
                           />
                         </Box>
+                        {/* </a> */}
                       </Item>
                       <Item>
+                        {/* <a href={menu.instagram} target="_blank"> */}
                         <Box>
                           <Image
                             src={ig}
@@ -320,8 +326,10 @@ export default function Nav({ menu }) {
                             height={30}
                           />
                         </Box>
+                        {/* </a> */}
                       </Item>
                       <Item>
+                        {/* <a href={menu.facebook} target="_blank"> */}
                         <Box>
                           <Image
                             src={fb}
@@ -330,6 +338,7 @@ export default function Nav({ menu }) {
                             height={30}
                           />
                         </Box>
+                        {/* </a> */}
                       </Item>
                     </Stack>
                   </Box>
@@ -542,7 +551,7 @@ export default function Nav({ menu }) {
                       <Item>
                         <Box
                           sx={{
-                            width: { xs: "calc(100vw - 64px)", md: 210 },
+                            width: { xs: 210, md: 210 },
                             height: { xs: "auto", md: 124 },
                           }}
                         >

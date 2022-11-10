@@ -66,59 +66,67 @@ export default function BrandKindC({ brand_kind3 }) {
   const BK3isInView4 = useInView(BK3ref4, { amount: 1 });
 
   useEffect(() => {
-    // const getInvew = async () => {
-    if (BK3isInView1 == true) {
-      scrollIntoView(document.getElementById("Kc_ID1"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-      console.log("BK3isInView1 invew");
-      scrollIntoView(document.getElementById("2-1"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-      //await delay(0);
-    } else if (BK3isInView2 == true) {
-      scrollIntoView(document.getElementById("Kc_ID2"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-      console.log("BK3isInView2 invew");
-      scrollIntoView(document.getElementById("3-6-2"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-    } else if (BK3isInView3 == true) {
-      scrollIntoView(document.getElementById("Kc_ID3"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-      console.log("BK3isInView3 invew");
-      scrollIntoView(document.getElementById("3-7"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-    } else if (BK3isInView4 == true) {
-      scrollIntoView(document.getElementById("Kc_ID4"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-      console.log("BK3isInView4 invew");
-      scrollIntoView(document.getElementById("3-15"), {
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-    }
-    // };
-    // getInvew();
+    const getInvew = async () => {
+      if (BK3isInView1 == true) {
+        await delay(100);
+        scrollIntoView(document.getElementById("Kc_ID1"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+        console.log("BK3isInView1 invew");
+        // await delay(200);
+        scrollIntoView(document.getElementById("2-1"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+        //await delay(0);
+      } else if (BK3isInView2 == true) {
+        await delay(100);
+        scrollIntoView(document.getElementById("Kc_ID2"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+        console.log("BK3isInView2 invew");
+        //await delay(200);
+        scrollIntoView(document.getElementById("3-6-2"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+      } else if (BK3isInView3 == true) {
+        await delay(100);
+        scrollIntoView(document.getElementById("Kc_ID3"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+        console.log("BK3isInView3 invew");
+        //await delay(200);
+        scrollIntoView(document.getElementById("3-7"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+      } else if (BK3isInView4 == true) {
+        await delay(100);
+        scrollIntoView(document.getElementById("Kc_ID4"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+        console.log("BK3isInView4 invew");
+        //await delay(200);
+        scrollIntoView(document.getElementById("3-15"), {
+          behavior: "smooth",
+          block: "start",
+          inline: "start",
+        });
+      }
+    };
+    getInvew();
   }, [BK3isInView1, BK3isInView2, BK3isInView3, BK3isInView4]);
 
   return (

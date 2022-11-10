@@ -8,6 +8,8 @@ import "keen-slider/keen-slider.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { scrollIntoView } from "seamless-scroll-polyfill";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   // useEffect(() => {
