@@ -825,7 +825,7 @@ export default function Map({
                     <Box
                       id="1-14"
                       mt={{ xs: "-75px", md: "-90px" }}
-                      ml={{ xs: -7, md: -9 }}
+                      ml={{ xs: -6, md: -7 }}
                       sx={{
                         position: "relative",
                         height: { xs: 150 * 0.7, md: 150 },
