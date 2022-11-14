@@ -103,6 +103,9 @@ p{
 .eventTitle p:last-child span{
   font-size: 43px !important; 
 }
+.sub_content p span img {
+  width:60vw;
+}
 @media only screen and (max-width: 900px) {
   .newsTitle p{
     line-height: 1 !important;
@@ -126,6 +129,9 @@ p{
   .newsTitle p:last-child span{
     font-size: 43px !important; 
   }
+  .sub_content p span img {
+    width:calc(100% - 0px);
+  }
 }
 .myBrandName p {
   line-height: 1 !important;
@@ -147,3 +153,5 @@ p{
   background-color:#000;
   color:#fff !important;
 }
+
+

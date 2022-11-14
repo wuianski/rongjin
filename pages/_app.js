@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { scrollIntoView } from "seamless-scroll-polyfill";
+import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -26,6 +27,28 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
         />
       </Head>
+      <DefaultSeo
+        title="榕錦時光 Rongjin Gorgeous Time"
+        description="榕錦時光 Rongjin Gorgeous Time : 點亮大安區，成為幸福的場所。 To brighten Da'an district and turn it into a place of delight."
+        canonical="https://rongjintimes.com/"
+        openGraph={{
+          type: "website",
+          locale: "zh_TW",
+          url: "https://rongjintimes.com/",
+          site_name: "榕錦時光 Rongjin Gorgeous Time",
+          title: "榕錦時光 Rongjin Gorgeous Time",
+          description:
+            "榕錦時光 Rongjin Gorgeous Time : 點亮大安區，成為幸福的場所。 To brighten Da'an district and turn it into a place of delight.",
+          images: [
+            {
+              url: "/imgs/logo.png",
+              width: 1724,
+              height: 836,
+              alt: "Rongjin Gorgeous Time",
+            },
+          ],
+        }}
+      />
       {/*** !!important when use router to query value from component. Use a React key to tell React to remount the component. ***/}
       <AnimatePresence>
         <motion.div

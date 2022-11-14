@@ -140,7 +140,7 @@ export default function news({ news, menu }) {
             <Box key={n.id}>
               <Box>
                 <Box
-                  pt={30}
+                  mt={{ xs: 23, md: 13 }}
                   pb={4}
                   className="newsTitle"
                   sx={{

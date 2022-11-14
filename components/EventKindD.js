@@ -68,7 +68,7 @@ export default function EventKindD({ event_kind_4 }) {
                   <EK4LO8 event={event} />
                 </>
               )}
-              {event.location_1 == "閱讀客廳" && (
+              {event.location_1 == "閱時客廳" && (
                 <>
                   <EK4LO4 event={event} />
                 </>
