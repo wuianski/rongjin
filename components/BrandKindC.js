@@ -132,7 +132,7 @@ export default function BrandKindC({ brand_kind3 }) {
   return (
     <>
       <Box
-        p={3}
+        p={4}
         mt={{ xs: "-80px", md: "-80px" }}
         sx={{
           position: "absolute",

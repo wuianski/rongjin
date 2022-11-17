@@ -140,17 +140,17 @@ export default function Nav({ menu }) {
   const executeGoMapA = (event) => {
     console.log("click executeGoTab1");
     setOpen(false);
-    router.push({ pathname: "/map", query: { cat: 1 } });
+    router.push({ pathname: "/map", query: { cat: 1 } }, { shallow: true });
   };
   const executeGoMapB = (event) => {
     console.log("click executeGoTab2");
     setOpen(false);
-    router.push({ pathname: "/map", query: { cat: 2 } });
+    router.push({ pathname: "/map", query: { cat: 2 } }, { shallow: true });
   };
   const executeGoMapC = (event) => {
     console.log("click executeGoTab3");
     setOpen(false);
-    router.push({ pathname: "/map", query: { cat: 3 } });
+    router.push({ pathname: "/map", query: { cat: 3 } }, { shallow: true });
   };
   const executeAbout = (event) => {
     console.log("click go to about");
@@ -166,12 +166,12 @@ export default function Nav({ menu }) {
   const executeGoMapD = (event) => {
     console.log("click executeGoTab4");
     setOpen(false);
-    router.push({ pathname: "/map", query: { cat: 4 } });
+    router.push({ pathname: "/map", query: { cat: 4 } }, { shallow: true });
   };
   const executeGoMapE = (event) => {
     console.log("click executeGoTab5");
     setOpen(false);
-    router.push({ pathname: "/map", query: { cat: 5 } });
+    router.push({ pathname: "/map", query: { cat: 5 } }, { shallow: true });
   };
 
   return (

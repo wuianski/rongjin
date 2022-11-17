@@ -8,6 +8,7 @@ import Nav from "../../../components/nav";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
+import event34_icon from "../../../public/imgs/event34_icon.png";
 
 /******************/
 /*** list stack ***/
@@ -70,7 +71,25 @@ export default function Event({ event, menu }) {
               {/*** event title  ***/}
               <Item>
                 <Box
-                  pt={9}
+                  mt={{ xs: 23, md: 13 }}
+                  mb={4}
+                  sx={{
+                    width: 97,
+                    height: 112,
+                    textAlign: "center",
+                    marginRight: "auto",
+                    marginLeft: "auto",
+                  }}
+                >
+                  <Image
+                    src={event34_icon}
+                    alt="yt icon"
+                    layout="intrinsic"
+                    objectFit="cover"
+                  />
+                </Box>
+                <Box
+                  pt={4}
                   pb={4}
                   className="newsTitle"
                   sx={{
@@ -79,6 +98,7 @@ export default function Event({ event, menu }) {
                     lineHeight: 1,
                     fontWeight: 600,
                     textAlign: "center",
+                    borderTop: "1px solid #000",
                   }}
                   dangerouslySetInnerHTML={{
                     __html: event.title,

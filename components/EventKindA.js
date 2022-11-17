@@ -47,7 +47,7 @@ export default function EventKindA({ event_kind_1 }) {
   return (
     <>
       <Box
-        p={3}
+        p={4}
         mt={{ xs: "-80px", md: "-80px" }}
         sx={{
           position: "absolute",

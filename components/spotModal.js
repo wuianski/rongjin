@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import spot_img from "../public/imgs/spot.png";
 import menuClose from "../public/imgs/menuClose.png";
+import { motion } from "framer-motion";
 
 /*********************/
 /*** modal setting ***/
@@ -35,22 +36,31 @@ export default function SpotModal({ mySpot }) {
 
   return (
     <>
-      <Box
-        onClick={handleOpen}
-        sx={{
-          cursor: "pointer",
-          position: "relative",
-          height: { xs: 28 * 0.7, md: 28 },
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 10,
         }}
       >
-        <Image
-          src={spot_img}
-          alt="element"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="center"
-        />
-      </Box>
+        <Box
+          onClick={handleOpen}
+          sx={{
+            cursor: "pointer",
+            position: "relative",
+            height: { xs: 28 * 0.7, md: 28 },
+          }}
+        >
+          <Image
+            src={spot_img}
+            alt="element"
+            layout="fill"
+            objectFit="contain"
+            objectPosition="center"
+          />
+        </Box>
+      </motion.div>
       {/*** modal ***/}
       <Modal
         open={open}

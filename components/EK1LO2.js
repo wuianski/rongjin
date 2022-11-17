@@ -50,7 +50,7 @@ export default function EK1LO2({ event }) {
         }}
         ml={1}
         mr={1}
-        pt={{ xs: 0, md: "calc(120px + 0px)" }}
+        pt={{ xs: 0, md: "calc(100px + 0px)" }}
         pb={1}
         id={`EK${event.kind}LO${event.location_1}ID${event.id}`}
         //id="EK1LO1ID1"
@@ -94,7 +94,7 @@ export default function EK1LO2({ event }) {
                 }}
                 ml={"auto"}
                 mr={"auto"}
-                mt={2}
+                mt={0}
                 //ref={ref1}
               >
                 <Image

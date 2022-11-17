@@ -92,7 +92,7 @@ export default function BrandKindB({ brand_kind2 }) {
   return (
     <>
       <Box
-        p={3}
+        p={4}
         mt={{ xs: "-80px", md: "-80px" }}
         sx={{
           position: "absolute",

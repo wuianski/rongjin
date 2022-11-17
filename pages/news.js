@@ -31,13 +31,14 @@ export default function news({ news, menu }) {
     arrows: false,
     dots: true,
     infinite: false,
-    //speed: 500,
+    speed: 500,
     //slidesToShow: 1,
     //slidesToScroll: 1,
+    //swipeToSlide: false,
     rows: 3,
     slidesPerRow: 1,
     fade: true,
-    focusOnSelect: true,
+    //focusOnSelect: true,
     adaptiveHeight: true,
     beforeChange: function (currentSlide, nextSlide) {
       console.log("before change", currentSlide, nextSlide);
@@ -140,7 +141,7 @@ export default function news({ news, menu }) {
             <Box key={n.id}>
               <Box>
                 <Box
-                  mt={{ xs: 23, md: 13 }}
+                  mt={{ xs: 23, md: 26 }}
                   pb={4}
                   className="newsTitle"
                   sx={{

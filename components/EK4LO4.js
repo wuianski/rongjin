@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useInView } from "framer-motion";
+import more from "../public/imgs/more.png";
 
 /******************/
 /*** list stack ***/
@@ -50,7 +51,7 @@ export default function EK4LO4({ event }) {
         }}
         ml={1}
         mr={1}
-        pt={{ xs: 0, md: "calc(120px + 0px)" }}
+        pt={{ xs: 0, md: "calc(100px + 0px)" }}
         pb={1}
         id={`EK${event.kind}LO${event.location_1}ID${event.id}`}
         //id="EK1LO1ID1"
@@ -94,7 +95,7 @@ export default function EK4LO4({ event }) {
                 }}
                 ml={"auto"}
                 mr={"auto"}
-                mt={2}
+                mt={0}
                 //ref={ref1}
               >
                 <Image
@@ -188,6 +189,28 @@ export default function EK4LO4({ event }) {
                 __html: event.main_content,
               }}
             ></Box>
+          </Item>
+          <Item>
+            <Link href={`/events/${event.id}`}>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: 206 * 1.5,
+                  height: 70 * 1.5,
+                  cursor: "pointer",
+                  margin: "-40px auto -18px auto",
+                  // marginRight: "auto",
+                  // marginLeft: "auto",
+                }}
+              >
+                <Image
+                  src={more}
+                  alt="more icon"
+                  layout="intrinsic"
+                  objectFit="cover"
+                />
+              </Box>
+            </Link>
           </Item>
           {/*** sub_content  ***/}
           {/* <Item>

@@ -66,6 +66,7 @@ import e3_16 from "../public/imgs/map/elements/3-16.png";
 import e1_5 from "../public/imgs/map/elements/1-5.png";
 import e1_2_1 from "../public/imgs/map/elements/1-2-1.png";
 //import spot_img from "../public/imgs/spot.png";
+import { motion } from "framer-motion";
 
 /*****************/
 /*** map stack ***/
@@ -682,25 +683,34 @@ export default function Map({
                 <Grid item xs={2}>
                   {/*** 寵物點子 BrandKindB id1 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKbID1}
-                      id="1-7"
-                      ml={0}
-                      mr={-4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e1_7}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKbID1}
+                        id="1-7"
+                        ml={0}
+                        mr={-4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e1_7}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -795,27 +805,36 @@ export default function Map({
                   </Item>
                 </Grid>
                 <Grid item xs={3}>
-                  {/*** 榕錦社區保健室 ***/}
+                  {/*** 幸福逸居 ***/}
                   <Item>
                     <Link href="/community_health_care">
-                      <Box
-                        id="1-13"
-                        ml={{ xs: -5, md: -5 }}
-                        mt={{ xs: -0.6, md: 0 }}
-                        sx={{
-                          position: "relative",
-                          height: { xs: 100 * 0.7, md: 100 },
-                          cursor: "pointer",
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
                         }}
                       >
-                        <Image
-                          src={e1_13}
-                          alt="element"
-                          layout="fill"
-                          objectFit="contain"
-                          objectPosition="center"
-                        />
-                      </Box>
+                        <Box
+                          id="1-13"
+                          ml={{ xs: -5, md: -5 }}
+                          mt={{ xs: -0.6, md: 0 }}
+                          sx={{
+                            position: "relative",
+                            height: { xs: 100 * 0.7, md: 100 },
+                            cursor: "pointer",
+                          }}
+                        >
+                          <Image
+                            src={e1_13}
+                            alt="element"
+                            layout="fill"
+                            objectFit="contain"
+                            objectPosition="center"
+                          />
+                        </Box>
+                      </motion.div>
                     </Link>
                   </Item>
                 </Grid>
@@ -903,25 +922,34 @@ export default function Map({
                 <Grid item xs={3}>
                   {/*** 吉品養生 BrandKindC id1 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKcID1}
-                      id="2-1"
-                      ml={-2}
-                      mr={-3}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e2_1}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKcID1}
+                        id="2-1"
+                        ml={-2}
+                        mr={-3}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e2_1}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -973,24 +1001,35 @@ export default function Map({
                 <Grid item xs={2}>
                   {/*** 服務中心 ***/}
                   <Item>
-                    <Box
-                      id="2-5"
-                      mt={"-40px"}
-                      ml={{ xs: -10, md: -13 }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 103 * 0.7, md: 103 },
-                        cursor: "pointer",
-                      }}
-                    >
-                      <Image
-                        src={e2_5}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                    <Link href="/news">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
+                      >
+                        <Box
+                          id="2-5"
+                          mt={"-40px"}
+                          ml={{ xs: -10, md: -13 }}
+                          sx={{
+                            position: "relative",
+                            height: { xs: 103 * 0.7, md: 103 },
+                            cursor: "pointer",
+                          }}
+                        >
+                          <Image
+                            src={e2_5}
+                            alt="element"
+                            layout="fill"
+                            objectFit="contain"
+                            objectPosition="center"
+                          />
+                        </Box>
+                      </motion.div>
+                    </Link>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -1099,24 +1138,33 @@ export default function Map({
                 <Grid item xs={2}>
                   {/*** 九州鬆餅 BrandKindA id1 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID1}
-                      id="3-4"
-                      ml={-4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_4}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID1}
+                        id="3-4"
+                        ml={-4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_4}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -1127,71 +1175,98 @@ export default function Map({
                 <Grid item xs={1}>
                   {/*** 金錦町 BrandKindA id2 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID2}
-                      id="3-6-1"
-                      ml={{ xs: -5, md: -4.2 }}
-                      mr={{ xs: -1, md: -1.8 }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_6_1}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID2}
+                        id="3-6-1"
+                        ml={{ xs: -5, md: -4.2 }}
+                        mr={{ xs: -1, md: -1.8 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_6_1}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
                   {/*** 花筏亭 BrandKindC id2 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKcID2}
-                      id="3-6-2"
-                      ml={-7}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_6_2}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKcID2}
+                        id="3-6-2"
+                        ml={-7}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_6_2}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
                   {/*** 京町山本屋 BrandKindC id3 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKcID3}
-                      id="3-7"
-                      ml={-4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_7}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKcID3}
+                        id="3-7"
+                        ml={-4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_7}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -1202,24 +1277,33 @@ export default function Map({
                 <Grid item xs={3}>
                   {/*** 吉屋 BrandKindA id3 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID3}
-                      id="3-9"
-                      ml={-4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_9}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID3}
+                        id="3-9"
+                        ml={-4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_9}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
@@ -1230,50 +1314,68 @@ export default function Map({
                 <Grid item xs={3}>
                   {/*** 臺虎居餃屋 BrandKindA id4 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID4}
-                      id="3-11"
-                      ml={-6}
-                      mr={{ xs: 3, md: 4 }}
-                      mt={{ xs: 2, md: 3 }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_11}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID4}
+                        id="3-11"
+                        ml={-6}
+                        mr={{ xs: 3, md: 4 }}
+                        mt={{ xs: 2, md: 3 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_11}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
                   {/*** 日日禾日 BrandKindA id5 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID5}
-                      id="3-13"
-                      mt={3}
-                      ml={-4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_13}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID5}
+                        id="3-13"
+                        mt={3}
+                        ml={-4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_13}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -1284,26 +1386,35 @@ export default function Map({
                 <Grid item xs={3}>
                   {/*** 好丘 BrandKindC id4 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKcID4}
-                      id="3-15"
-                      mt={3}
-                      ml={-8}
-                      mr={4}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_15}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKcID4}
+                        id="3-15"
+                        mt={3}
+                        ml={-8}
+                        mr={4}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_15}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={1}>
@@ -1331,76 +1442,107 @@ export default function Map({
                 <Grid item xs={4}>
                   {/*** 老優雅 BrandKindA id6 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID6}
-                      id="3-17"
-                      mt={3}
-                      ml={-1}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_17}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID6}
+                        id="3-17"
+                        mt={3}
+                        ml={-1}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_17}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
                   {/*** 興波咖啡 BrandKindA id7 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID7}
-                      id="3-18-1"
-                      mt={3}
-                      ml={{ xs: -5, md: -4.2 }}
-                      mr={{ xs: -4.2, md: -4.2 }}
-                      sx={{
-                        position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_18_2}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID7}
+                        id="3-18-1"
+                        mt={3}
+                        ml={{ xs: -5, md: -4.2 }}
+                        mr={{ xs: -4.2, md: -4.2 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={e3_18_2}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
                 <Grid item xs={2}>
                   {/*** 興波咖啡 BrandKindA id8 ***/}
                   <Item>
-                    <Box
-                      onClick={executeKaID8}
-                      id="3-18-2"
-                      mt={3}
-                      ml={{ xs: -5, md: -4.2 }}
-                      mr={{ xs: -1, md: 0 }}
-                      sx={{
+                    <motion.div
+                      whileHover={{
+                        scale: 1.1,
                         position: "relative",
-                        height: { xs: 100 * 0.7, md: 100 },
-                        cursor: "pointer",
-                        zIndex: 2,
+                        zIndex: 4,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
                       }}
                     >
-                      <Image
-                        src={e3_18_1}
-                        alt="element"
-                        layout="fill"
-                        objectFit="contain"
-                        objectPosition="center"
-                      />
-                    </Box>
+                      <Box
+                        onClick={executeKaID8}
+                        id="3-18-2"
+                        mt={3}
+                        ml={{ xs: -5, md: -4.2 }}
+                        mr={{ xs: -1, md: 0 }}
+                        sx={{
+                          position: "relative",
+                          height: { xs: 100 * 0.7, md: 100 },
+                          cursor: "pointer",
+                          zIndex: 4,
+                        }}
+                      >
+                        <Image
+                          src={e3_18_1}
+                          alt="element"
+                          layout="fill"
+                          objectFit="contain"
+                          objectPosition="center"
+                        />
+                      </Box>
+                    </motion.div>
                   </Item>
                 </Grid>
               </Grid>
@@ -1571,6 +1713,7 @@ export default function Map({
                         sx={{
                           position: "relative",
                           height: { xs: 100 * 0.7, md: 100 },
+                          zIndex: 1,
                         }}
                       >
                         <Image
@@ -1588,6 +1731,7 @@ export default function Map({
                         sx={{
                           position: "relative",
                           height: { xs: 28 * 0.7, md: 28 },
+                          zIndex: 1,
                         }}
                       >
                         <SpotModal mySpot={mySpot[0]} />
@@ -1642,11 +1786,11 @@ export default function Map({
             <Box
               pt={{ xs: 0, md: "80px" }}
               pb={0}
-              ml={4}
-              mr={4}
+              ml={5}
+              mr={5}
               sx={{
                 position: "fixed",
-                width: { xs: "calc(100vw - 64px)", md: "calc(50vw - 64px)" },
+                width: { xs: "calc(100vw - 64px)", md: "calc(50vw - 80px)" },
                 borderBottom: "1px solid #000",
                 backgroundColor: "#fff",
                 zIndex: 9,
