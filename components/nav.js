@@ -26,6 +26,8 @@ import map from "../public/imgs/nav/map.png";
 
 import { useRouter } from "next/router";
 
+import { motion } from "framer-motion";
+
 /******************/
 /*** nav stack ***/
 const Item = styled(Paper)(({ theme }) => ({
@@ -138,38 +140,38 @@ export default function Nav({ menu }) {
   /* test link to other page and close Nav first */
   const router = useRouter();
   const executeGoMapA = (event) => {
-    console.log("click executeGoTab1");
+    // console.log("click executeGoTab1");
     setOpen(false);
     router.push({ pathname: "/map", query: { cat: 1 } }, { shallow: true });
   };
   const executeGoMapB = (event) => {
-    console.log("click executeGoTab2");
+    // console.log("click executeGoTab2");
     setOpen(false);
     router.push({ pathname: "/map", query: { cat: 2 } }, { shallow: true });
   };
   const executeGoMapC = (event) => {
-    console.log("click executeGoTab3");
+    // console.log("click executeGoTab3");
     setOpen(false);
     router.push({ pathname: "/map", query: { cat: 3 } }, { shallow: true });
   };
   const executeAbout = (event) => {
-    console.log("click go to about");
+    // console.log("click go to about");
     setOpen(false);
     /*** use query to pass value to useRouter in index page ***/
     router.push({ pathname: "/", query: { about: "about" } });
   };
   const excuteHome = (event) => {
-    console.log("click go to home");
+    // console.log("click go to home");
     setOpen(false);
     router.push({ pathname: "/" });
   };
   const executeGoMapD = (event) => {
-    console.log("click executeGoTab4");
+    // console.log("click executeGoTab4");
     setOpen(false);
     router.push({ pathname: "/map", query: { cat: 4 } }, { shallow: true });
   };
   const executeGoMapE = (event) => {
-    console.log("click executeGoTab5");
+    // console.log("click executeGoTab5");
     setOpen(false);
     router.push({ pathname: "/map", query: { cat: 5 } }, { shallow: true });
   };
@@ -187,13 +189,22 @@ export default function Nav({ menu }) {
           cursor: "pointer",
         }}
       >
-        <Image
-          src={menuOpen}
-          placeholder="blur"
-          alt="icon of menu open"
-          width={51}
-          height={51}
-        />
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
+          }}
+        >
+          <Image
+            src={menuOpen}
+            placeholder="blur"
+            alt="icon of menu open"
+            width={51}
+            height={51}
+          />
+        </motion.div>
       </Box>
 
       {/*** nav open content ***/}

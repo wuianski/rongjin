@@ -237,7 +237,7 @@ export default function Event({ event, menu }) {
 }
 
 export async function getServerSideProps({ params }) {
-  console.log(params); // { id: '2', sort: '2' }
+  // console.log(params); // { id: '2', sort: '2' }
   // Run API calls in parallel
   const [event, menu] = await Promise.all([
     await fetchData(

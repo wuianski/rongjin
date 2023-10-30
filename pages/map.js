@@ -344,7 +344,7 @@ export default function Map({
     });
   };
   const executeKcID3 = async (event) => {
-    setValue(2);
+    setValue(0); /* go to 享時光 */
     await delay(1000);
     /*** 京町　山本屋 BrandKindC id3 ***/
     scrollIntoView(document.getElementById("Kc_ID3"), {
@@ -1859,6 +1859,8 @@ export async function getServerSideProps() {
               filename_disk
             }
             contact_us
+            instagram
+            facebook
           }
       }
       `,
@@ -1882,6 +1884,8 @@ export async function getServerSideProps() {
               filename_disk
             }
             contact_us
+            instagram
+            facebook
           }
       }
       `,
@@ -1905,6 +1909,8 @@ export async function getServerSideProps() {
               filename_disk
             }
             contact_us
+            instagram
+            facebook
           }
       }
       `,

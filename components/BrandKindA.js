@@ -10,6 +10,9 @@ import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useInView } from "framer-motion";
 
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+
 /******************/
 /*** list stack ***/
 const Item = styled(Paper)(({ theme }) => ({
@@ -33,24 +36,29 @@ export default function BrandKindA({ brand_kind1 }) {
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
       logoPhoto: !!b.logo && !!b.logo.filename_disk ? b.logo.filename_disk : "",
       contactUs: b.contact_us,
+      ig: b.instagram,
+      fb: b.facebook,
     };
 
     return result;
   });
-  //console.log(brand1[0].brandName);
+  // console.log(brand1[0].ig);
 
   /*************************/
   /*** useInview setting ***/
   const BK1ref1 = useRef(null);
   const BK1ref2 = useRef(null);
+  const BK1ref2_2 = useRef(null);
   const BK1ref3 = useRef(null);
   const BK1ref4 = useRef(null);
   const BK1ref5 = useRef(null);
   const BK1ref6 = useRef(null);
   const BK1ref7 = useRef(null);
   const BK1ref8 = useRef(null);
+  
   const BK1isInView1 = useInView(BK1ref1, { amount: 1 });
   const BK1isInView2 = useInView(BK1ref2, { amount: 1 });
+  const BK1isInView2_2 = useInView(BK1ref2_2, { amount: 1 });
   const BK1isInView3 = useInView(BK1ref3, { amount: 1 });
   const BK1isInView4 = useInView(BK1ref4, { amount: 1 });
   const BK1isInView5 = useInView(BK1ref5, { amount: 1 });
@@ -65,7 +73,7 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView1 invew");
+      // console.log("BK1isInView1 invew");
       scrollIntoView(document.getElementById("3-4"), {
         behavior: "smooth",
         block: "start",
@@ -77,8 +85,21 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView2 invew");
+      // console.log("BK1isInView2 invew");
       scrollIntoView(document.getElementById("3-6-1"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    } /* change 山本屋 from 遇身心 to 享食光 */
+      else if (BK1isInView2_2 == true) {
+      scrollIntoView(document.getElementById("Kc_ID3"), {
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+      // console.log("BK1isInView2_2 invew");
+      scrollIntoView(document.getElementById("3-7"), {
         behavior: "smooth",
         block: "start",
         inline: "start",
@@ -101,7 +122,7 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView4 invew");
+      // console.log("BK1isInView4 invew");
       scrollIntoView(document.getElementById("3-11"), {
         behavior: "smooth",
         block: "start",
@@ -113,7 +134,7 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView5 invew");
+      // console.log("BK1isInView5 invew");
       scrollIntoView(document.getElementById("3-13"), {
         behavior: "smooth",
         block: "start",
@@ -137,7 +158,7 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView7 invew");
+      // console.log("BK1isInView7 invew");
       scrollIntoView(document.getElementById("3-18-1"), {
         behavior: "smooth",
         block: "start",
@@ -149,7 +170,7 @@ export default function BrandKindA({ brand_kind1 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK1isInView8 invew");
+      // console.log("BK1isInView8 invew");
       scrollIntoView(document.getElementById("3-18-2"), {
         behavior: "smooth",
         block: "start",
@@ -161,6 +182,7 @@ export default function BrandKindA({ brand_kind1 }) {
   }, [
     BK1isInView1,
     BK1isInView2,
+    BK1isInView2_2,
     BK1isInView3,
     BK1isInView4,
     BK1isInView5,
@@ -295,6 +317,24 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand1[0].ig && (
+                  <Box component="span">
+                    <a href={brand1[0].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[0].fb && (
+                  <Box component="span">
+                    <a href={brand1[0].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
@@ -404,6 +444,152 @@ export default function BrandKindA({ brand_kind1 }) {
                   __html: brand1[1].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand1[1].ig && (
+                  <Box component="span">
+                    <a href={brand1[1].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[1].fb && (
+                  <Box component="span">
+                    <a href={brand1[1].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
+          </Stack>
+        </Box>
+        {/*****************/}
+        {/*** 2-2 brand 山本屋 ***/}
+        <Box
+          sx={{
+            color: "#000",
+            backgroundColor: "none",
+          }}
+          ml={1}
+          mr={1}
+          pt={{ xs: 2, md: "calc(120px + 24px)" }}
+          pb={1}
+          id="Kc_ID3"
+        >
+          <Stack
+            direction={{ xs: "column", md: "column" }}
+            spacing={{ xs: 1, md: 5 }}
+            mt={{ xs: 2, md: -2 }}
+            ml={0}
+            mr={0}
+          >
+            <Item>
+              <Box
+                sx={{
+                  textAlign: "center",
+                  fontSize: "43px",
+                  lineHeight: "43px",
+                  fontFamily: "GenWanMin TW",
+                  fontWeight: 600,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].brandName,
+                }}
+                ref={BK1ref2_2}
+              ></Box>
+            </Item>
+            <Item>
+              {brand1[7].coverPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "30vh", md: "50vh" },
+                    borderRadius: "20px",
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                  mt={-3}
+                >
+                  <Image
+                    className="brandCover"
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].coverPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              {brand1[7].logoPhoto && (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: { xs: "69px", md: "80px" },
+                  }}
+                  ml={"auto"}
+                  mr={"auto"}
+                >
+                  <Image
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].logoPhoto}`}
+                    alt="bg"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </Box>
+              )}
+            </Item>
+            <Item>
+              <Box
+                pt={1}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                  borderTop: "1px solid #000",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].introduction,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box
+                pt={0}
+                sx={{
+                  textAlign: "left",
+                  fontFamily: "GenYoGothic TW",
+                  fontWeight: 400,
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: brand1[7].contactUs,
+                }}
+              ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand1[7].ig && (
+                  <Box component="span">
+                    <a href={brand1[7].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[7].fb && (
+                  <Box component="span">
+                    <a href={brand1[7].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>
@@ -515,6 +701,24 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand1[2].ig && (
+                  <Box component="span">
+                    <a href={brand1[2].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[2].fb && (
+                  <Box component="span">
+                    <a href={brand1[2].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
@@ -624,6 +828,24 @@ export default function BrandKindA({ brand_kind1 }) {
                   __html: brand1[3].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand1[3].ig && (
+                  <Box component="span">
+                    <a href={brand1[3].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[3].fb && (
+                  <Box component="span">
+                    <a href={brand1[3].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>
@@ -735,6 +957,24 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand1[4].ig && (
+                  <Box component="span">
+                    <a href={brand1[4].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[4].fb && (
+                  <Box component="span">
+                    <a href={brand1[4].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
@@ -845,6 +1085,24 @@ export default function BrandKindA({ brand_kind1 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand1[5].ig && (
+                  <Box component="span">
+                    <a href={brand1[5].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[5].fb && (
+                  <Box component="span">
+                    <a href={brand1[5].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/*****************/}
@@ -879,13 +1137,13 @@ export default function BrandKindA({ brand_kind1 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand1[7].brandName,
+                  __html: brand1[8].brandName,
                 }}
                 ref={BK1ref7}
               ></Box>
             </Item>
             <Item>
-              {brand1[7].coverPhoto && (
+              {brand1[8].coverPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -899,7 +1157,7 @@ export default function BrandKindA({ brand_kind1 }) {
                 >
                   <Image
                     className="brandCover"
-                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[8].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
@@ -909,7 +1167,7 @@ export default function BrandKindA({ brand_kind1 }) {
               )}
             </Item>
             <Item>
-              {brand1[7].logoPhoto && (
+              {brand1[8].logoPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -920,7 +1178,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   mr={"auto"}
                 >
                   <Image
-                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[7].logoPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand1[8].logoPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="contain"
@@ -939,7 +1197,7 @@ export default function BrandKindA({ brand_kind1 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand1[7].introduction,
+                  __html: brand1[8].introduction,
                 }}
               ></Box>
             </Item>
@@ -952,9 +1210,27 @@ export default function BrandKindA({ brand_kind1 }) {
                   fontWeight: 400,
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand1[7].contactUs,
+                  __html: brand1[8].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand1[8].ig && (
+                  <Box component="span">
+                    <a href={brand1[8].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[8].fb && (
+                  <Box component="span">
+                    <a href={brand1[8].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>
@@ -1065,6 +1341,24 @@ export default function BrandKindA({ brand_kind1 }) {
                   __html: brand1[6].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand1[6].ig && (
+                  <Box component="span">
+                    <a href={brand1[6].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand1[6].fb && (
+                  <Box component="span">
+                    <a href={brand1[6].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>

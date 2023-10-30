@@ -132,6 +132,12 @@ export default function About({ about, aboutState }) {
           variants={blackLine}
           initial={true}
           animate={isOpen ? "open" : "closed"}
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
+          }}
         >
           <Box
             sx={{
@@ -257,6 +263,12 @@ export default function About({ about, aboutState }) {
           variants={bgText}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
+          // whileHover={{ scaleY: 1.1 }}
+          // transition={{
+          //   type: "spring",
+          //   stiffness: 400,
+          //   damping: 10,
+          // }}
         >
           <Box
             sx={{
@@ -267,12 +279,21 @@ export default function About({ about, aboutState }) {
             }}
             onClick={executeGoMapA}
           >
-            <Image
-              src={gotomap}
-              alt="yt icon"
-              layout="intrinsic"
-              objectFit="cover"
-            />
+            <motion.div
+              whileHover={{ scaleY: 1.1 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <Image
+                src={gotomap}
+                alt="yt icon"
+                layout="intrinsic"
+                objectFit="cover"
+              />
+            </motion.div>
           </Box>
         </motion.div>
       </Box>

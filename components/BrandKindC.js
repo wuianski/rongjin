@@ -10,6 +10,9 @@ import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useInView } from "framer-motion";
 
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+
 /******************/
 /*** list stack ***/
 const Item = styled(Paper)(({ theme }) => ({
@@ -48,6 +51,8 @@ export default function BrandKindC({ brand_kind3 }) {
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
       logoPhoto: !!b.logo && !!b.logo.filename_disk ? b.logo.filename_disk : "",
       contactUs: b.contact_us,
+      ig: b.instagram,
+      fb: b.facebook,
     };
 
     return result;
@@ -58,11 +63,11 @@ export default function BrandKindC({ brand_kind3 }) {
   /*** useInview setting ***/
   const BK3ref1 = useRef(null);
   const BK3ref2 = useRef(null);
-  const BK3ref3 = useRef(null);
+  // const BK3ref3 = useRef(null);
   const BK3ref4 = useRef(null);
   const BK3isInView1 = useInView(BK3ref1, { amount: 1 });
   const BK3isInView2 = useInView(BK3ref2, { amount: 1 });
-  const BK3isInView3 = useInView(BK3ref3, { amount: 1 });
+  // const BK3isInView3 = useInView(BK3ref3, { amount: 1 });
   const BK3isInView4 = useInView(BK3ref4, { amount: 1 });
 
   useEffect(() => {
@@ -74,7 +79,7 @@ export default function BrandKindC({ brand_kind3 }) {
           block: "start",
           inline: "start",
         });
-        console.log("BK3isInView1 invew");
+        // console.log("BK3isInView1 invew");
         // await delay(200);
         scrollIntoView(document.getElementById("2-1"), {
           behavior: "smooth",
@@ -89,28 +94,30 @@ export default function BrandKindC({ brand_kind3 }) {
           block: "start",
           inline: "start",
         });
-        console.log("BK3isInView2 invew");
+        // console.log("BK3isInView2 invew");
         //await delay(200);
         scrollIntoView(document.getElementById("3-6-2"), {
           behavior: "smooth",
           block: "start",
           inline: "start",
         });
-      } else if (BK3isInView3 == true) {
-        await delay(100);
-        scrollIntoView(document.getElementById("Kc_ID3"), {
-          behavior: "smooth",
-          block: "start",
-          inline: "start",
-        });
-        console.log("BK3isInView3 invew");
-        //await delay(200);
-        scrollIntoView(document.getElementById("3-7"), {
-          behavior: "smooth",
-          block: "start",
-          inline: "start",
-        });
-      } else if (BK3isInView4 == true) {
+      } 
+      // else if (BK3isInView3 == true) {
+      //   await delay(100);
+      //   scrollIntoView(document.getElementById("Kc_ID3"), {
+      //     behavior: "smooth",
+      //     block: "start",
+      //     inline: "start",
+      //   });
+      //   console.log("BK3isInView3 invew");
+      //   //await delay(200);
+      //   scrollIntoView(document.getElementById("3-7"), {
+      //     behavior: "smooth",
+      //     block: "start",
+      //     inline: "start",
+      //   });
+      // } 
+        else if (BK3isInView4 == true) {
         await delay(100);
         scrollIntoView(document.getElementById("Kc_ID4"), {
           behavior: "smooth",
@@ -127,7 +134,7 @@ export default function BrandKindC({ brand_kind3 }) {
       }
     };
     getInvew();
-  }, [BK3isInView1, BK3isInView2, BK3isInView3, BK3isInView4]);
+  }, [BK3isInView1, BK3isInView2, BK3isInView4]);
 
   return (
     <>
@@ -255,6 +262,24 @@ export default function BrandKindC({ brand_kind3 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand3[0].ig && (
+                  <Box component="span">
+                    <a href={brand3[0].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand3[0].fb && (
+                  <Box component="span">
+                    <a href={brand3[0].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/* <Section /> */}
@@ -367,12 +392,30 @@ export default function BrandKindC({ brand_kind3 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand3[1].ig && (
+                  <Box component="span">
+                    <a href={brand3[1].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand3[1].fb && (
+                  <Box component="span">
+                    <a href={brand3[1].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
         {/* <Section /> */}
         {/*****************/}
         {/*** 3rd brand 京町　山本屋 ***/}
-        <Box
+        {/* <Box
           sx={{
             color: "#000",
             backgroundColor: "none",
@@ -480,11 +523,11 @@ export default function BrandKindC({ brand_kind3 }) {
               ></Box>
             </Item>
           </Stack>
-        </Box>
+        </Box> */}
         {/* <Section /> */}
         {/* <Box sx={{ backgroundColor: "red", height: 200 }}></Box> */}
         {/*****************/}
-        {/*** 4th brand 好丘 ***/}
+        {/*** 4th --> 3rd brand 好丘 ***/}
         <Box
           sx={{
             color: "#000",
@@ -515,13 +558,13 @@ export default function BrandKindC({ brand_kind3 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand3[3].brandName,
+                  __html: brand3[2].brandName,
                 }}
                 ref={BK3ref4}
               ></Box>
             </Item>
             <Item>
-              {brand3[3].coverPhoto && (
+              {brand3[2].coverPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -535,7 +578,7 @@ export default function BrandKindC({ brand_kind3 }) {
                 >
                   <Image
                     className="brandCover"
-                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[3].coverPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[2].coverPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="cover"
@@ -545,7 +588,7 @@ export default function BrandKindC({ brand_kind3 }) {
               )}
             </Item>
             <Item>
-              {brand3[3].logoPhoto && (
+              {brand3[2].logoPhoto && (
                 <Box
                   sx={{
                     position: "relative",
@@ -556,7 +599,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   mr={"auto"}
                 >
                   <Image
-                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[3].logoPhoto}`}
+                    src={`${process.env.DIRECTUS_URL}/assets/${brand3[2].logoPhoto}`}
                     alt="bg"
                     layout="fill"
                     objectFit="contain"
@@ -575,7 +618,7 @@ export default function BrandKindC({ brand_kind3 }) {
                   borderTop: "1px solid #000",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand3[3].introduction,
+                  __html: brand3[2].introduction,
                 }}
               ></Box>
             </Item>
@@ -588,9 +631,27 @@ export default function BrandKindC({ brand_kind3 }) {
                   fontWeight: 400,
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: brand3[3].contactUs,
+                  __html: brand3[2].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand3[2].ig && (
+                  <Box component="span">
+                    <a href={brand3[2].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand3[2].fb && (
+                  <Box component="span">
+                    <a href={brand3[2].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>

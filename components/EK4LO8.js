@@ -22,7 +22,7 @@ function Section3({ children }) {
   const ref3 = useRef(null);
   const isInView3 = useInView(ref3, { amount: 1 });
   useEffect(() => {
-    console.log("Event4 ref3 is in view: ", isInView3);
+    // console.log("Event4 ref3 is in view: ", isInView3);
     if (isInView3 === true) {
       /*** CHANGE HERE 服務中心 id ***/
       scrollIntoView(document.getElementById("2-5"), {

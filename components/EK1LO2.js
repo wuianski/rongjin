@@ -22,7 +22,7 @@ function Section2({ children }) {
   const ref2 = useRef(null);
   const isInView2 = useInView(ref2, { amount: 1 });
   useEffect(() => {
-    console.log("Event1 ref2 is in view: ", isInView2);
+    // console.log("Event1 ref2 is in view: ", isInView2);
     if (isInView2 === true) {
       /*** CHANGE HERE 時光巷弄 id ***/
       scrollIntoView(document.getElementById("1-5"), {

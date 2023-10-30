@@ -22,7 +22,7 @@ function Section1({ children }) {
   const ref1 = useRef(null);
   const isInView1 = useInView(ref1, { amount: 1 });
   useEffect(() => {
-    console.log("Event1 ref1 is in view: ", isInView1);
+    // console.log("Event1 ref1 is in view: ", isInView1);
     if (isInView1 === true) {
       /*** CHANGE HERE 綠沐廣場 id ***/
       scrollIntoView(document.getElementById("1-2-1"), {

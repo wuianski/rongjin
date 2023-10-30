@@ -23,7 +23,7 @@ function Section3({ children }) {
   const ref3 = useRef(null);
   const isInView3 = useInView(ref3, { amount: 1 });
   useEffect(() => {
-    console.log("Event4 location 閱時客廳 is in view: ", isInView3);
+    // console.log("Event4 location 閱時客廳 is in view: ", isInView3);
     if (isInView3 === true) {
       /*** CHANGE HERE 閱時客廳 id ***/
       scrollIntoView(document.getElementById("1-14"), {

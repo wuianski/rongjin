@@ -10,6 +10,9 @@ import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useInView } from "framer-motion";
 
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+
 /******************/
 /*** list stack ***/
 const Item = styled(Paper)(({ theme }) => ({
@@ -29,6 +32,8 @@ export default function BrandKindB({ brand_kind2 }) {
         !!b.cover && !!b.cover.filename_disk ? b.cover.filename_disk : "",
       logoPhoto: !!b.logo && !!b.logo.filename_disk ? b.logo.filename_disk : "",
       contactUs: b.contact_us,
+      ig: b.instagram,
+      fb: b.facebook,
     };
 
     return result;
@@ -56,7 +61,7 @@ export default function BrandKindB({ brand_kind2 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK2isInView1 invew");
+      // console.log("BK2isInView1 invew");
       scrollIntoView(document.getElementById("1-7"), {
         behavior: "smooth",
         block: "start",
@@ -68,7 +73,7 @@ export default function BrandKindB({ brand_kind2 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK2isInView2 invew");
+      // console.log("BK2isInView2 invew");
       scrollIntoView(document.getElementById("4-4-1"), {
         behavior: "smooth",
         block: "start",
@@ -80,7 +85,7 @@ export default function BrandKindB({ brand_kind2 }) {
         block: "start",
         inline: "start",
       });
-      console.log("BK2isInView3 invew");
+      // console.log("BK2isInView3 invew");
       scrollIntoView(document.getElementById("4-4-2"), {
         behavior: "smooth",
         block: "start",
@@ -213,6 +218,24 @@ export default function BrandKindB({ brand_kind2 }) {
                 }}
               ></Box>
             </Item>
+            <Item>
+              <Box>
+                {brand2[0].ig && (
+                  <Box component="span">
+                    <a href={brand2[0].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand2[0].fb && (
+                  <Box component="span">
+                    <a href={brand2[0].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
+            </Item>
           </Stack>
         </Box>
 
@@ -322,6 +345,24 @@ export default function BrandKindB({ brand_kind2 }) {
                   __html: brand2[2].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand2[2].ig && (
+                  <Box component="span">
+                    <a href={brand2[2].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand2[2].fb && (
+                  <Box component="span">
+                    <a href={brand2[2].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>
@@ -433,6 +474,24 @@ export default function BrandKindB({ brand_kind2 }) {
                   __html: brand2[1].contactUs,
                 }}
               ></Box>
+            </Item>
+            <Item>
+              <Box>
+                {brand2[0].ig && (
+                  <Box component="span">
+                    <a href={brand2[1].ig} target="_blank" rel="noreferrer">
+                      <InstagramIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                  </Box>
+                )}
+                {brand2[0].fb && (
+                  <Box component="span">
+                    <a href={brand2[1].fb} target="_blank" rel="noreferrer">
+                      <FacebookIcon sx={{color:"#D18D1F"}}/>
+                    </a>
+                </Box>
+                )}
+              </Box>
             </Item>
           </Stack>
         </Box>

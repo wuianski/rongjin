@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import Image from "next/image";
 import en_btn from "../public/imgs/en_btn.png";
 import ch_btn from "../public/imgs/ch_btn.png";
+import jp_btn from "../public/imgs/jp_btn.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -47,6 +48,10 @@ export default function AboutContent({ about }) {
     for (let i = 0; i < nodeList_en.length; i++) {
       nodeList_en[i].style.display = "block";
     }
+    const nodeList_jp = document.querySelectorAll(".jp");
+    for (let i = 0; i < nodeList_jp.length; i++) {
+      nodeList_jp[i].style.display = "none";
+    }
   };
   /*** changeToCH ***/
   const changeToCH = async (event) => {
@@ -57,6 +62,25 @@ export default function AboutContent({ about }) {
     const nodeList_en = document.querySelectorAll(".en");
     for (let i = 0; i < nodeList_en.length; i++) {
       nodeList_en[i].style.display = "none";
+    }
+    const nodeList_jp = document.querySelectorAll(".jp");
+    for (let i = 0; i < nodeList_jp.length; i++) {
+      nodeList_jp[i].style.display = "none";
+    }
+  };
+  /*** changeToJP ***/
+  const changeToJP = async (event) => {
+    const nodeList_ch = document.querySelectorAll(".ch");
+    for (let i = 0; i < nodeList_ch.length; i++) {
+      nodeList_ch[i].style.display = "none";
+    }
+    const nodeList_en = document.querySelectorAll(".en");
+    for (let i = 0; i < nodeList_en.length; i++) {
+      nodeList_en[i].style.display = "none";
+    }
+    const nodeList_jp = document.querySelectorAll(".jp");
+    for (let i = 0; i < nodeList_jp.length; i++) {
+      nodeList_jp[i].style.display = "block";
     }
   };
 
@@ -118,6 +142,34 @@ export default function AboutContent({ about }) {
           />
         </Box>
       </Box>
+      {/*** JP btn  ***/}
+      <Box
+        pb={3}
+        pt={3}
+        sx={{
+          position: "absolute",
+          left: { xs: "8px", md: "34px" },
+          top: { xs: "216px", md: "342px" },
+          zIndex: 2,
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: "calc(154px * 0.8)", md: "154px" },
+            height: { xs: "calc(70px * 0.8)", md: "70px" },
+            cursor: "pointer",
+          }}
+          onClick={changeToJP}
+        >
+          <Image
+            src={jp_btn}
+            alt="return icon"
+            layout="intrinsic"
+            objectFit="cover"
+          />
+        </Box>
+      </Box>
       {/*** about content which can scroll ***/}
       <Box
         sx={{
@@ -160,6 +212,16 @@ export default function AboutContent({ about }) {
                       __html: about.park_introduction_en,
                     }}
                   />
+                  <Box
+                    className="jp"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.park_introduction_jp,
+                    }}
+                  />
                 </ItemSub>
                 {/*** 歷史沿革 ***/}
                 {/* <ItemSub>
@@ -198,6 +260,16 @@ export default function AboutContent({ about }) {
                       __html: about.prospects_en,
                     }}
                   />
+                  <Box
+                    className="jp"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.prospects_jp,
+                    }}
+                  />
                 </ItemSub>
                 {/*** 營運團隊 ***/}
                 <ItemSub>
@@ -219,6 +291,16 @@ export default function AboutContent({ about }) {
                     }}
                     dangerouslySetInnerHTML={{
                       __html: about.operations_team_en,
+                    }}
+                  />
+                  <Box
+                    className="jp"
+                    sx={{
+                      fontFamily: "GenWanMin, Noto Serif TC",
+                      display: "none",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: about.operations_team_jp,
                     }}
                   />
                 </ItemSub>

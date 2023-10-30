@@ -80,11 +80,14 @@ export async function getServerSideProps() {
             id
             park_introduction_tw
             park_introduction_en
+            park_introduction_jp
             history_tw
             prospects_tw
             prospects_en
+            prospects_jp
             operations_team_tw
             operations_team_en
+            operations_team_jp
             transportation_tw
           }
       }
